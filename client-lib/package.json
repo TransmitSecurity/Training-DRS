@@ -1,0 +1,57 @@
+{
+  "name": "@transmitsecurity-dev/ts-demo-client-lib",
+  "version": "1.6.0",
+  "type": "module",
+  "main": "./lib/index.cjs",
+  "module": "./lib/index.cjs",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.cjs"
+    },
+    "./lib/schemas/*": {
+      "import": "./lib/schemas/*.js",
+      "require": "./lib/schemas/*.cjs",
+      "types": "./lib/schemas/*.d.ts"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/transmitsecurity-dev/ts-demo-client-lib.git"
+  },
+  "bugs": {
+    "url": "https://github.com/transmitsecurity-dev/ts-demo-client-lib/issues"
+  },
+  "homepage": "https://github.com/transmitsecurity-dev/ts-demo-client-lib",
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "build": "npm run clean && tsc && vite build",
+    "clean": "rimraf build coverage nyc_output",
+    "type:dts": "tsc --emitDeclarationOnly --project tsconfig.build.json",
+    "type:check": "tsc --noEmit",
+    "generate": "openapi-generator-cli generate -g typescript-axios -i openapi/server-spec.json -o src --remove-operation-id-prefix"
+  },
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.7.0",
+    "@types/config": "^3.3.0",
+    "@types/prompts": "^2.4.4",
+    "autoprefixer": "^10.4.19",
+    "fast-glob": "^3.3.0",
+    "nyc": "^15.1.0",
+    "postcss-import": "^16.1.0",
+    "rimraf": "^5.0.1",
+    "source-map-support": "^0.5.21",
+    "tailwindcss": "^3.4.1",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.6",
+    "vite": "^5.1.5",
+    "vite-plugin-dts": "^3.4.0"
+  },
+  "dependencies": {
+    "axios": "^1.4.0"
+  }
+}

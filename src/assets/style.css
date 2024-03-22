@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --base: theme(colors.base-100);
+  --base-light: color-mix(in srgb, var(--base), white 30%);
+
+  .dp__theme_light {
+    --dp-background-color: var(--base-light);
+    --dp-text-color: theme(colors.base-content);
+    --dp-hover-color: theme(colors.base-200);
+    --dp-hover-text-color: theme(colors.base-content);
+    --dp-hover-icon-color: theme(colors.primary);
+    --dp-primary-color: theme(colors.primary);
+    --dp-primary-text-color: theme(colors.primary-content);
+    --dp-secondary-color: theme(colors.secondary);
+    --dp-border-color: hsl(var(--bc) / 0.2);
+    --dp-menu-border-color: hsl(var(--bc) / 0.2);
+    --dp-border-color-hover: hsl(var(--bc) / 0.4);
+    --dp-disabled-color: #f6f6f6;
+    --dp-scroll-bar-background: #f3f3f3;
+    --dp-scroll-bar-color: #959595;
+    --dp-success-color: theme(colors.success);
+    --dp-success-color-disabled: theme(colors.base-300);
+    --dp-icon-color: theme(colors.primary);
+    --dp-danger-color: theme(colors.error);
+    --dp-highlight-color: rgba(25, 118, 210, 0.1);
+    --dp-border-radius: var(--rounded-btn, 0.5rem);
+  }
+}
+
+.input-light {
+  background-color: var(--base-light);
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/**
+ * Checkout steps styling
+ */
+
+/* Lines - future steps */
+.steps.shop-steps li.step:before {
+  background-color: hsl(var(--p) / 0.5);
+  --tw-text-opacity: 1;
+  color: hsl(var(--pc) / var(--tw-text-opacity));
+
+  /* Line thickness */
+  height: 0.15rem;
+  /* Put labels on top of lines and dots */
+  grid-row-start: 2;
+}
+
+/* Lines - steps visited */
+.steps.shop-steps li.step.step-primary:before {
+  /* Display first line */
+  content: ' ' !important;
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--p) / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: hsl(var(--pc) / var(--tw-text-opacity));
+
+  /* Line thickness */
+  height: 0.2rem;
+}
+
+.steps.shop-steps li.step.step-primary:first-child:before {
+  /* Display first line */
+  content: ' ' !important;
+  --tw-bg-opacity: 1;
+  background-color: hsl(var(--p) / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: hsl(var(--pc) / var(--tw-text-opacity));
+}
+
+.steps.shop-steps .step.step-primary:after {
+  height: 1rem;
+  width: 1rem;
+  /* Put labels on top of lines and dots */
+  grid-row-start: 2;
+  background-color: hsl(var(--p));
+}
+
+/* Circles - future steps */
+.steps.shop-steps .step:after {
+  height: 0.75rem;
+  width: 0.75rem;
+  /* Put labels on top of lines and dots */
+  grid-row-start: 2;
+  background-color: hsl(var(--p));
+}
+
+.steps.shop-steps li.step:last-child::before {
+  /* Display last line */
+  width: 150%;
+  margin-left: -50%;
+}
+
+/* Spinner */
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid hsl(var(--p));
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 100px;
+    left: 100px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 100px;
+    left: 100px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 100px;
+    left: 100px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
+}

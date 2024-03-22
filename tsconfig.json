@@ -1,0 +1,23 @@
+{
+  "files": [],
+  "compilerOptions": {
+    "types": [
+      "vitest/globals",
+      "@intlify/unplugin-vue-i18n/messages"
+    ],
+    "lib": [
+      "dom"
+    ],
+  },
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.vitest.json"
+    }
+  ],
+}

@@ -1,0 +1,15 @@
+{
+  // only use words from .cspell.json
+  "cSpell.userWords": [],
+  "cSpell.enabled": true,
+  "editor.formatOnSave": true,
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "VSCodeCounter.exclude": [
+    "**/.gitignore",
+    "**/.vscode/**",
+    "**/node_modules/**",
+    "**/package-lock.json"
+  ],
+  "todo-tree.tree.showBadges": true,
+  "todo-tree.tree.showCountsInTree": true
+}

@@ -1,0 +1,542 @@
+{
+  "global": {
+    "no": "Non",
+    "yes": "Oui",
+    "confirm": "Confirmer",
+    "confirmation": "Confirmation",
+    "return-home": "Retourner à l'accueil",
+    "currency": "€",
+    "ok": "OK",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "resend": "Renvoyer",
+    "verify": "Vérifier",
+    "close": "Fermer",
+    "retry": "Réessayer",
+    "update": "Mettre à jour",
+    "goHome": "Accueil",
+    "pageNotFound": "Page Non Trouvée",
+    "continue": "Continuer",
+    "back": "Retour",
+    "loading": "Chargement",
+    "areYouSure": "Êtes-vous sûr ?",
+    "next": "Suivant"
+  },
+  "error": {
+    "anErrorOccurred": "Une erreur s'est produite"
+  },
+  "menu": {
+    "profile": "Profil",
+    "account": "Compte",
+    "security": "Sécurité",
+    "cards": "Cartes",
+    "transfers": "Virements",
+    "notifications": "Notifications",
+    "settings": "Paramètres"
+  },
+  "userData": {
+    "birthday": "Date de naissance",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "Email",
+    "phone": "Téléphone",
+    "deliveryAddress": "Adresse de livraison",
+    "address": "Adresse",
+    "street": "Rue",
+    "city": "Ville",
+    "zipCode": "Code postal",
+    "country": "Pays",
+    "notVerified": "Non vérifié",
+    "verified": "Vérifié"
+  },
+  "password": {
+    "currentPasswordRequired": "Votre mot de passe actuel est requis",
+    "newPasswordRequired": "Votre nouveau mot de passe est requis",
+    "passwordTooSmall": "Votre mot de passe doit avoir au moins 8 caractères",
+    "passwordTooLong": "Votre mot de passe ne peut pas dépasser 14 caractères",
+    "confirmNewPassword": "Confirmez votre nouveau mot de passe",
+    "passwordsDontMatch": "Les mots de passe ne correspondent pas",
+    "passwordSecurity": "Sécurité du mot de passe",
+    "changeYourPassword": "Changez votre mot de passe",
+    "oldPassword": "Ancien mot de passe",
+    "newPassword": "Nouveau mot de passe",
+    "confirmation": "Confirmation",
+    "updatePassword": "Changer le mot de passe",
+    "passwordUpdated": "Mot de passe mis à jour",
+    "invalidPassword": "Mot de passe incorrect",
+    "forgotPassword": "J'ai oublié mon mot de passe",
+    "passwordsMatch": "Les mots de passe correspondent",
+    "repeatYourPassword": "Répétez votre mot de passe"
+  },
+  "otp": {
+    "pleaseEnterTheCodeReceived": "Veuillez entrer le code envoyé au",
+    "codeSuccessfullyValidated": "Code validé avec succès",
+    "notReceived": "Message non reçu ?",
+    "invalidCode": "Code invalide",
+    "oneLastThing": "Une dernière chose",
+    "codeSent": "Code envoyé"
+  },
+  "webauthn": {
+    "registration": {
+      "tiredOfPasswords": "Fatigué des mots de passe ?",
+      "weDetectedCompatibility": "Nous avons détecté que votre appareil est compatible avec les passkeys.",
+      "dependingOnYourDevice": "En fonction de votre appareil, vous pouvez vous connecter avec votre empreinte, la reconnaissance faciale, ou votre code PIN.",
+      "later": "Peut-être plus tard",
+      "enable": "Activer",
+      "dontAskAgain": "Ne plus me demander sur cet appareil",
+      "backToSignupOptions": "Retour aux options de création de compte",
+      "successful": "Création validée",
+      "youCanNowLoginWithYourDevice": "Vous pouvez maintenant vous connecter directement avec votre appareil.",
+      "thisMethodIsSimplerAndMoreSecure": "Cette méthode de connexion est plus simple, et plus sécurisée."
+    }
+  },
+  "authentication": {
+    "or": "OU",
+    "alreadyHaveAccount": "Vous avez déjà un compte ?",
+    "dontHaveAccount": "Vous n'avez pas de compte ?",
+    "signup": "Création",
+    "login": "Connexion",
+    "logout": "Déconnexion",
+    "password": "Mot de passe",
+    "backToLoginOptions": "Retour aux options de connexion",
+    "backToYourAccount": "Retour au compte",
+    "backToSignupOptions": "Retour aux options de création de compte",
+    "emailSent": {
+      "timeToCheckYourInbox": "Vérifier votre boîte",
+      "weJustSentAnEmail": "Nous venons d'envoyer un email à l'adresse",
+      "ifYouHaveAnEmail": "Si vous avez déjà un compte avec nous, nous venons de vous envoyer un email à l'adresse",
+      "passwordResetSent": "Nous venons d'envoyer un message de réinitialisation à l'adresse",
+      "ifNotReceived": "Si après quelques minutes vous n'avez toujours pas reçu d'email, vérifiez vos spams et cliquez sur ce bouton",
+      "button": ".",
+      "weSentYouAnEmail": "Nous venon de vous envoyer un email. Pour continuer le processus, cliquez sur le lien reçu à l'adresse: "
+    },
+    "smsSent": {
+      "didNotReceive": "Message non reçu ?"
+    },
+    "close": "Fermer",
+    "retry": "Réessayer",
+    "createPassword": "Créer un mot de passe",
+    "createYourPassword": "Créer votre mot de passe",
+    "stepup": {
+      "oneLastThing": "Une dernière chose"
+    },
+    "signInToYourAccount": "Connectez vous à votre compte"
+  },
+  "registration": {
+    "createYourAccount": "Créez votre compte",
+    "createAccount": "Créez un compte",
+    "billingInformation": "Information de facturation",
+    "weAreCreatingYourAccount": "Nous créons votre compte"
+  },
+  "account": {
+    "profile": {
+      "manageYourInformation": "Gérer vos informations et comment elles sont utilisées.",
+      "updatePersonalInformation": "Mettre à jour vos informations personnelles",
+      "updateEmail": "Mettre à jour votre adresse email",
+      "updatePhone": "Mettre à jour votre numéro de téléphone",
+      "updateHomeAddress": "Mettre à jour votre adresse postale",
+      "contact": "Contact",
+      "yourContactInformation": "Vos informations de contact. Pour modifier ces informations, veuillez vous rendre dans vos options de sécurité.",
+      "editYourContactInformation": "Modifier vos informaitons de contact.",
+      "yourPostalAddress": "Votre adresse postale. Nous l'utiliserons pour les livraison et pour vous envoyer des courriers importants.",
+      "privacy": "Vie privée",
+      "managePrivacySettings": "Gérez vos paramètres de vie privée."
+    },
+    "security": {
+      "updateVerifyContactInfo": "Update and verify your contact information.",
+      "updateYourPassword": "Update your password."
+    },
+    "deletionConfirmationMessage": "This will permanently deactivate your account. This operation cannot be undone.",
+    "deleteYourAccount": "Delete your account",
+    "permanentlyDeleteYourAccount": "Permanently delete your account and all of the data associated with it. We will only keep the data required by the regulation.",
+    "reviewYourSettings": "Review your account settings.",
+    "yourAccount": "Your Account"
+  },
+  "components": {
+    "account": {
+      "accountInfoItem": {
+        "notVerified": "Not verified",
+        "verified": "Verified"
+      },
+      "accountPersonalInfoView": {
+        "title": "Review your personal information",
+        "verify": "Verify",
+        "add": "Add",
+        "phoneNotVerifiedMessage": "Your phone number is not verified",
+        "mailNotVerifiedMessage": "Your email is not verified",
+        "missingNameMessage": "Your name is missing",
+        "missingPhoneMessage": "Your phone number is missing",
+        "missingMailMessage": "Your email address is missing",
+        "personalInformation": "Personal information",
+        "seeMoreOptions": "See more options...",
+        "idvButton": "Verify my identity",
+        "dangerZone": "Danger zone",
+        "dangerZoneMessage01": "If you do not think you will use Brandly again and would like your account deleted, we can take care of this for you. Keep in mind that you will not be able to reactivate your account or retrieve any of the content or information related to your orders.",
+        "dangerZoneMessage02": "If you would still like your account deleted, click \"Delete My Account\"",
+        "deleteMyAccount": "Delete My Account",
+        "edit": "Edit"
+      },
+      "editContact": {
+        "updateEmail": "Update your email address",
+        "updatePhone": "Update your phone number",
+        "updateEmailMessage01": "Enter the new email address you would like to link to your account.",
+        "updateEmailMessage02": "We will send a verification code to this email address",
+        "updatePhoneMessage01": "Enter the new phone number you would like to link to your account.",
+        "updatePhoneMessage02": "We will send a verification code to this phone number."
+      },
+      "accountSecurityView": {
+        "reviewSecuritySettings": "Review your security settings"
+      },
+      "updatePasswordCard": {
+        "currentPasswordRequired": "Your current password is required",
+        "newPasswordRequired": "Your new password is required",
+        "passwordTooSmall": "Your password must be at least 8 characters long",
+        "passwordTooLong": "Your password must not be longer than 14 characters",
+        "confirmNewPassword": "Confirm your new password",
+        "passwordsDontMatch": "Passwords do not match",
+        "passwordSecurity": "Password security",
+        "changeYourPassword": "Change your password",
+        "oldPassword": "Old password",
+        "newPassword": "New password",
+        "confirmation": "Confirmation",
+        "updatePassword": "Update password"
+      },
+      "contact": "Contact"
+    },
+    "checkout": {
+      "orderForm": {
+        "modifyAddress": "Modify my address",
+        "order": "Order",
+        "continueShopping": "Continue my shopping"
+      },
+      "orderSummary": {
+        "forThePurchaseOf": "For the purchase of"
+      }
+    },
+    "login": {
+      "smsSent": {
+        "timeToCheck": "Time to check your phone",
+        "mainMessage": "Please enter the code received to the number",
+        "notReceived": "Did not receive your message?"
+      },
+      "passwordlessFallbackDialog": {
+        "somethingWentWrong": "Oops, something went wrong",
+        "couldntLogIn": "It looks like you couldn't log in with your device.",
+        "connectMagicLink": "Would you like to connect by receiving a link by email?"
+      },
+      "passwordlessReset": {
+        "getEmail": "Get a password reset email",
+        "aboutToResetPassword": "You are about to reset your password. Enter your email address below to receive a password reset link.",
+        "resetMyPassword": "Reset my password"
+      }
+    },
+    "verification": {
+      "smsSent": {
+        "mainMessage": "Please enter the code received to the number"
+      },
+      "identityVerification": {
+        "letsVerify": "Let's verify your ID",
+        "toStartScan": "To start verifying your ID document, scan this QR code with your smartphone.",
+        "verificationInProgress": "Verification in progress",
+        "continueOnSmartphone": "Continue the process on your smartphone.",
+        "identityVerified": "Identity verified",
+        "thisRequestExpired": "This request expired",
+        "requestIsNotValidAnymore": "Unfortunately this request is not valid anymore. You can close this pop-up and start a new verification.",
+        "identityVerifiedSuccessfully": "Your identity was verified successfully.",
+        "click": "Click",
+        "toUpdateOr": "to update your information or",
+        "toIgnore": "to ignore the results of this identity verification.",
+        "requestTimeout": "Unfortunately this request is not valid anymore.",
+        "clickRetry": "Click the Retry button below to start a new verification session."
+      }
+    },
+    "cartSideBar": {
+      "title": "My Cart",
+      "empty": "Your cart is empty.",
+      "emptyMessage": "You can add items to your cart by clicking on the \"Add to Cart\" button on the product page.",
+      "subTotal": "SubTotal",
+      "currency": "USD",
+      "shipping": "Shipping",
+      "free": "FREE",
+      "checkout": "PROCEED TO CHECKOUT"
+    },
+    "heroSection": {
+      "brandMessage": "Versatile. Sustainable. Ready for sunshine.",
+      "shopMen": "SHOP MEN",
+      "shopWomen": "SHOP WOMEN"
+    },
+    "navBar": {
+      "login": "Log in",
+      "accountSettings": "Account settings",
+      "orders": "Orders",
+      "logout": "Log out"
+    },
+    "toast": {
+      "AddToCartToast": {
+        "addedToCart": "Added to cart",
+        "viewCart": "VIEW CART",
+        "checkoutNow": "CHECKOUT NOW"
+      }
+    }
+  },
+  "views": {
+    "account": {
+      "accountEditPersonalView": {
+        "title": "Update your personal information",
+        "textMessage": "This information will be used for all your invoices and to check your identity when your orders are delivered.",
+        "firstName": "First Name *",
+        "lastName": "Last Name *",
+        "birthday": "Birthday"
+      },
+      "accountEditAddressView": {
+        "title": "Update your home address",
+        "textMessage": "Your home address will be used to deliver your orders and will be your default billing address."
+      },
+      "accountView": {
+        "myPersonalInformation": "My Personal Information",
+        "securitySettings": "Security Settings"
+      },
+      "passwordResetView": {
+        "welcomeBack": "Welcome back",
+        "toFinaliseChooseAPassword": "To finalize your password reset, please choose a new password.",
+        "weRecommendAPasswordManager": "We recommend using a password manager to securely generate and store your passwords.",
+        "changeYourPassword": "Change your password",
+        "newPassword": "New password",
+        "passwordMatch": "Passwords match",
+        "resetPassword": "Reset password"
+      }
+    },
+    "checkoutView": {
+      "checkout": "Checkout",
+      "empty": "Your cart is empty.",
+      "emptyMessage": "You can add items to your cart by clicking on the \"Add to Cart\" button on the product page."
+    },
+    "homeView": {
+      "trending": "Trending"
+    },
+    "loginView": {
+      "title": "Login to your account",
+      "or": "OR"
+    },
+    "ordersView": {
+      "noOders": "No orders",
+      "yourOrders": "Your Orders"
+    },
+    "productView": {
+      "back": "Back",
+      "raiting": "56 ratings",
+      "color": "Color",
+      "size": "Size",
+      "shippingMessage": "2-4 day shipping",
+      "addToCart": "ADD TO CART",
+      "goHome": "Go home",
+      "includingVATplusShipping": "incl. VAT plus shipping",
+      "when": "When?",
+      "category1": {
+        "title": "CLOTHING FOR MEN"
+      },
+      "category2": {
+        "title": "CLOTHING FOR WOMEN"
+      }
+    },
+    "signupView": {
+      "title": "Create a new account",
+      "or": "OR"
+    },
+    "dataVerificationView": {
+      "success": "Success!",
+      "yourEmailWasUpdated": "Your email has been updated 🎉",
+      "oops": "Oops ...",
+      "anErrorOccured": "An error occured when verifying your email",
+      "loading": "Loading",
+      "orderNumber": "Order #",
+      "items": "items",
+      "viewDetails": "View details"
+    }
+  },
+  "validation": {
+    "email": {
+      "emailIsRequired": "Your email is required",
+      "validEmailRequired": "A valid email is required"
+    },
+    "firstName": {
+      "nameRequired": "Your first name is required",
+      "validNameRequired": "A valid name is required"
+    },
+    "lastName": {
+      "nameRequired": "Your last name is required",
+      "validNameRequired": "A valid name is required"
+    },
+    "phone": {
+      "phoneRequired": "Your phone number is required"
+    },
+    "street": {
+      "streetRequired": "Street is required"
+    },
+    "city": {
+      "cityRequired": "City is required"
+    },
+    "country": {
+      "countryRequired": "Country is required"
+    },
+    "zipCode": {
+      "zipCodeRequired": "Zip code is required"
+    },
+    "password": {
+      "passwordRequired": "Your password is required",
+      "EightCharacters": "Your password should contain at least 8 characters"
+    },
+    "amount": {
+      "amountRequired": "A valid amount is required"
+    },
+    "iban": {
+      "ibanRequired": "Your IBAN is required",
+      "validIbanRequired": "A valid IBAN is required"
+    }
+  },
+  "toast": {
+    "error": {
+      "formIsInvalid": "Form is invalid",
+      "invalidForm": "Invalid form",
+      "failedToUpdateProfile": "Failed to update profile",
+      "enterAPhoneNumber": "Enter a phone number",
+      "invalidEmail": "Invalid email",
+      "anErrorOccurred": "An error occurred",
+      "invalidCode": "Invalid code"
+    },
+    "info": {
+      "accountDeleted": "Account deleted"
+    },
+    "success": {
+      "codeSuccessfullyValidated": "Code successfully validated",
+      "useYourPhoneToLogin": "You can now use your phone to login",
+      "smsSent": "Code sent"
+    }
+  },
+  "passkey": {
+    "recoverPasskey": "Recover my passkey"
+  },
+  "luxeShop": {
+    "privacyPolicyTerms": "By creating an account, you agree to accept the General Terms and Conditions of Use and that your data will be processed in compliance with the Privacy Policy of Heline.",
+    "marketingEmailsCheckbox": "I agree to receive information by email about offers, services, products and events from Heline or other group companies, in accordance with the Privacy Policy."
+  },
+  "shop": {
+    "productNotFound": "Product not found",
+    "cart": "Cart",
+    "brandMessage": "Versatile. Sustainable. Ready for sunshine.",
+    "shopMen": "SHOP MEN",
+    "shopWomen": "SHOP WOMEN",
+    "cartSideBar": {
+      "title": "My Cart",
+      "empty": "Your cart is empty.",
+      "emptyMessage": "You can add items to your cart by clicking on the \"Add to Cart\" button on the product page.",
+      "subTotal": "SubTotal",
+      "currency": "USD",
+      "shipping": "Shipping",
+      "free": "FREE",
+      "checkout": "PROCEED TO CHECKOUT"
+    },
+    "product": {
+      "rating": "56 ratings",
+      "color": "Color",
+      "size": "Size",
+      "shippingMessage": "2-4 day shipping",
+      "addToCart": "ADD TO CART",
+      "includingVATplusShipping": "incl. VAT plus shipping",
+      "when": "When?",
+      "category1": {
+        "title": "CLOTHING FOR MEN"
+      },
+      "category2": {
+        "title": "CLOTHING FOR WOMEN"
+      }
+    },
+    "order": {
+      "forThePurchaseOf": "For the purchase of",
+      "modifyAddress": "Modify my address",
+      "order": "Order",
+      "continueShopping": "Continue my shopping",
+      "noOders": "No orders",
+      "yourOrders": "Your Orders",
+      "orderNumber": "Order #",
+      "items": "items",
+      "viewDetails": "View details"
+    },
+    "checkout": "Checkout",
+    "trending": "Trending",
+    "addedToCart": "Added to cart",
+    "viewCart": "VIEW CART",
+    "checkoutNow": "CHECKOUT NOW",
+    "thisIsAGift": "This is a gift",
+    "customerService": "Customer Service",
+    "storesAndOnlineOrders": "Stores and online orders",
+    "servicePhoneNumber": "+33 (0)1 23 30 67 00",
+    "serviceHours": "from Monday to Friday 9AM-7PM",
+    "freeDelivery": "Free delivery",
+    "contactGlobalHotline": "Contact the global hotline",
+    "securePayments": "Secure payments",
+    "subTotal": "Sub-Total",
+    "total": "Total",
+    "shippingCostsAreFree": "Shipping costs are free for your order.",
+    "delivery": "Delivery",
+    "youHaveXItemsInYourCart": "You have no items in your cart. | You have one item in your cart. | You have {count} items in your cart.",
+    "deliveryAndPayment": "Delivery & Payment",
+    "orderSummary": "Order summary",
+    "confirmAndPay": "Confirm and Pay",
+    "createAccountAndPay": "Create Account and Pay",
+    "orderNotFound": "Order not found",
+    "orderDate": "Order date:",
+    "productsOrdered": "Products ordered",
+    "deliveryStatus": "Delivery status",
+    "delivered": "Delivered",
+    "iDidNotReceive": "I did not receive my order",
+    "deliveredTo": "Delivered to",
+    "orders": "Orders",
+    "transit": "In transit",
+    "categories": "Categories",
+    "womenFashion": "Women fashion",
+    "menFashion": "Men fashion"
+  },
+  "bank": {
+    "greeting": "Hello",
+    "unread": "28 unread",
+    "myMainAccount": "My Main account",
+    "lastLogin": "Last login:",
+    "myTransactions": "My transactions",
+    "transaction1": "Bohébon Labège - Food store",
+    "transaction2": "Apple Store",
+    "transaction3": "Netflix subscription",
+    "contact": "Contact",
+    "insurances": "Insurances",
+    "simulator": "Simulator",
+    "support": "Support",
+    "myAccounts": "My accounts",
+    "mySavings": "My savings",
+    "mainSavingsAccount": "Main savings account",
+    "secondarySavingsAccount": "Secondary savings account",
+    "easyAccessSavingsAccount": "Easy access savings account",
+    "greenSavingsAccount": "Green savings account",
+    "depositAccount": "Deposit account",
+    "transfer": {
+      "selectReceivingAccount": "Select the receiving account",
+      "selectSendingAccount": "Select the sending account",
+      "transferMoney": "Transfer money",
+      "accountToDebit": "Account to debit",
+      "accountToCredit": "Account to credit",
+      "transferAmount": "Transfer amount",
+      "transferDate": "Transfer date",
+      "immediateTransferAd": {
+        "title": "Your transfer in less than 10 seconds",
+        "content": "Need to send money to friends or family quickly? Find in your beneficiaries who is eligible to instant payment and send them money in less than 10 seconds."
+      },
+      "passkeysAd": {
+        "title": "More security with Passkeys",
+        "content1": "Passkeys offer the convenience of fast and easy authentication, and provides a security stronger than a password combined with an SMS code.",
+        "content2": "Even better, with passkeys, no application is required.",
+        "learnMore": "Learn more about passkeys"
+      }
+    },
+    "addABeneficiary": "Add a beneficiary",
+    "amount": "Amount"
+  }
+}

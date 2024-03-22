@@ -1,0 +1,37 @@
+# dependencies
+node_modules/
+
+# outputs
+.nyc_output/
+coverage/
+.VSCodeCounter/
+
+# source code
+src/
+docs/
+openapi/
+
+# configs
+.vscode/
+.husky/
+.github/
+.czrc
+.commitlintrc.json
+.gitignore
+.releaserc.json
+.npmignore
+tsconfig.json
+vitest.config.json
+vite.config.ts
+tsconfig.build.json
+
+# secrets
+.env
+.npmrc
+
+# docs
+CONTRIBUTING.md
+PUBLISHING.md
+README.md
+.env.example
+.npmrc.example

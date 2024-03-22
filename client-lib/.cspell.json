@@ -1,0 +1,43 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "backchannel",
+    "birthdate",
+    "CIBA",
+    "commitlint",
+    "Creds",
+    "degit",
+    "EMAILHIPPO",
+    "esbuild",
+    "Idliveq",
+    "IDOLOGY",
+    "jwks",
+    "MGMT",
+    "octocat",
+    "oidc",
+    "openapi",
+    "parens",
+    "passcode",
+    "Passwordless",
+    "pino",
+    "PKCE",
+    "rmrf",
+    "SCIM",
+    "serviceprovider",
+    "socio",
+    "ts-demo-server-lib",
+    "webauthn",
+    "zoneinfo"
+  ],
+  "flagWords": [],
+  "ignorePaths": [
+    "package.json",
+    "package-lock.json",
+    "yarn.lock",
+    "tsconfig.json",
+    "node_modules/**",
+    "src/schemas/**",
+    "src/endpoints/**"
+  ]
+}

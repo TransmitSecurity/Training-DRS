@@ -1,0 +1,440 @@
+{
+  "global": {
+    "no": "Não",
+    "yes": "Sim",
+    "confirm": "Confirme",
+    "confirmation": "Confirmação",
+    "return-home": "Voltar para início",
+    "currency": "R$",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "resend": "Reenviar",
+    "verify": "Verificar",
+    "update": "Atualizar",
+    "pageNotFound": "Página não encontrada",
+    "goHome": "Ir para inicio",
+    "back": "Voltar",
+    "loading": "Carregando",
+    "areYouSure": "Tem certeza?"
+  },
+  "menu": {
+    "profile": "Perfil",
+    "security": "Segurança",
+    "account": "Conta",
+    "cards": "Cartões",
+    "transfers": "Transferências",
+    "notifications": "Notificações"
+  },
+  "userData": {
+    "birthday": "Data aniversário",
+    "firstName": "Primeiro nome",
+    "lastName": "Último nome",
+    "email": "E-mail",
+    "phone": "Telefone",
+    "deliveryAddress": "Endereço de entrega",
+    "street": "Rua",
+    "city": "Cidade",
+    "zipCode": "CEP",
+    "country": "País",
+    "notVerified": "Não Verificado",
+    "verified": "Verificado",
+    "address": "Endereço"
+  },
+  "password": {
+    "currentPasswordRequired": "Sua senha atual é necessária",
+    "newPasswordRequired": "Sua nova senha é necessária",
+    "passwordTooSmall": "Sua senha deve ter pelo menos 8 caracteres",
+    "passwordTooLong": "Sua senha não deve ter mais de 14 caracteres",
+    "confirmNewPassword": "Confirme sua nova senha",
+    "passwordsDontMatch": "As senhas não coincidem",
+    "passwordSecurity": "Segurança de senha",
+    "changeYourPassword": "Mude sua senha",
+    "oldPassword": "Senha antiga",
+    "newPassword": "Nova senha",
+    "confirmation": "Confirmação",
+    "updatePassword": "Atualizar senha",
+    "invalidPassword": "Senha inválida",
+    "passwordUpdated": "senha atualizada",
+    "forgotPassword": "Esqueci minha senha",
+    "passwordsMatch": "Palavras-chave correspondem",
+    "repeatYourPassword": "Repita sua senha"
+  },
+  "otp": {
+    "codeSuccessfullyValidated": "Código validado com sucesso",
+    "notReceived": "Não recebeu sua mensagem?",
+    "invalidCode": "Código inválido",
+    "pleaseEnterTheCodeReceived": "Por favor insira o código enviado para",
+    "oneLastThing": "Uma última coisa",
+    "codeSent": "Código enviado"
+  },
+  "webauthn": {
+    "registration": {
+      "tiredOfPasswords": "Cansado de senhas?",
+      "weDetectedCompatibility": "Detectamos que seu dispositivo é compatível com Passwordless.",
+      "dependingOnYourDevice": "Dependendo do seu dispositivo, você pode fazer login com sua digital, reconhecimento facial ou PIN.",
+      "later": "Talvez mais tarde",
+      "enable": "Habilitar",
+      "dontAskAgain": "Não pergunte novamente neste dispositivo",
+      "backToSignupOptions": "Voltar para as opções de cadastro",
+      "successful": "Registro bem-sucedido",
+      "youCanNowLoginWithYourDevice": "Agora você pode fazer login diretamente com seu dispositivo.",
+      "thisMethodIsSimplerAndMoreSecure": "Este método de login é mais simples e seguro."
+    }
+  },
+  "authentication": {
+    "or": "OU",
+    "alreadyHaveAccount": "Já tem uma conta?",
+    "dontHaveAccount": "Não tem uma conta?",
+    "signup": "Cadastre-se",
+    "login": "Login",
+    "logout": "Sair",
+    "password": "Senha",
+    "backToLoginOptions": "Voltar para as opções de login",
+    "backToYourAccount": "Voltar para sua conta",
+    "backToSignupOptions": "Voltar para as opções de cadastro",
+    "emailSent": {
+      "timeToCheckYourInbox": "Hora de verificar sua caixa de entrada",
+      "weJustSentAnEmail": "Acabamos de enviar um e-mail para o endereço",
+      "ifYouHaveAnEmail": "Se você já possui uma conta conosco, acabamos de enviar um e-mail para o endereço",
+      "passwordResetSent": "Acabamos de enviar um e-mail de redefinição de senha para o endereço",
+      "ifNotReceived": "Se depois de alguns minutos você ainda não recebeu seu e-mail, verifique seu spam ou clique aqui",
+      "button": "botão."
+    },
+    "smsSent": {
+      "didNotReceive": "Não recebeu sua mensagem?"
+    },
+    "close": "Fechar",
+    "signInToYourAccount": "Faça login em sua conta"
+  },
+  "account": {
+    "profile": {
+      "updatePersonalInformation": "Atualize suas informações pessoais",
+      "updateEmail": "Atualize seu endereço de e-mail",
+      "updatePhone": "Atualize seu número de telefone",
+      "updateHomeAddress": "Atualize seu endereço residencial",
+      "contact": "Contact",
+      "manageYourInformation": "Gerencie suas informações e como elas serão usadas.Gerencie suas informações e como elas serão usadas.",
+      "yourContactInformation": "Sua informação de contato. \nPara editar essas informações, vá para as opções de segurança.",
+      "editYourContactInformation": "Edite suas informações de contato",
+      "yourPostalAddress": "Seu endereço postal. \nIremos utilizá-lo para as suas entregas e para lhe enviar correspondências importantes.",
+      "privacy": "Privacidade",
+      "managePrivacySettings": "Gerencie suas configurações de privacidade."
+    },
+    "security": {
+      "updateYourPassword": "Atualize sua senha.",
+      "updateVerifyContactInfo": "Atualize e verifique suas informações de contato."
+    }
+  },
+  "components": {
+    "account": {
+      "accountInfoItem": {
+        "notVerified": "Não Verificado",
+        "verified": "Verificado"
+      },
+      "accountPersonalInfoView": {
+        "title": "Revise suas informações pessoais",
+        "verify": "Verificar",
+        "add": "Adicionar",
+        "phoneNotVerifiedMessage": "Seu número de telefone não foi verificado",
+        "mailNotVerifiedMessage": "Seu e-mail não foi verificado",
+        "missingNameMessage": "Seu nome não está preenchido",
+        "missingPhoneMessage": "Seu número de telefone não está preenchido",
+        "missingMailMessage": "Seu endereço de e-mail não está preenchido",
+        "personalInformation": "Informações pessoais",
+        "seeMoreOptions": "Ver mais opções...",
+        "dangerZone": "Zona de perigo",
+        "dangerZoneMessage01": "Se você acha que não usará o Brandly novamente e gostaria que sua conta fosse excluída, podemos cuidar disso para você. Lembre-se de que você não poderá reativar sua conta ou recuperar qualquer conteúdo ou informação relacionada aos seus pedidos.",
+        "dangerZoneMessage02": "Se você ainda deseja que sua conta seja excluída, clique em \"Excluir minha conta\"",
+        "deleteMyAccount": "Excluir minha conta",
+        "edit": "Editar"
+      },
+      "editContact": {
+        "updateEmail": "Atualize seu endereço de e-mail",
+        "updatePhone": "Atualize seu número de telefone",
+        "updateEmailMessage01": "Digite o novo endereço de e-mail que você gostaria de vincular à sua conta..",
+        "updateEmailMessage02": "Enviaremos um código de verificação para este endereço de e-mail",
+        "updatePhoneMessage01": "Digite o novo número de telefone que você gostaria de vincular à sua conta.",
+        "updatePhoneMessage02": "Enviaremos um código de verificação para este número de telefone."
+      },
+      "accountSecurityView": {
+        "reviewSecuritySettings": "Revise suas configurações de segurança"
+      },
+      "updatePasswordCard": {
+        "currentPasswordRequired": "Sua senha atual é necessária",
+        "newPasswordRequired": "Sua nova senha é necessária",
+        "passwordTooSmall": "Sua senha deve ter pelo menos 8 caracteres",
+        "passwordTooLong": "Sua senha não deve ter mais de 14 caracteres",
+        "confirmNewPassword": "Confirme sua nova senha",
+        "passwordsDontMatch": "As senhas não coincidem",
+        "passwordSecurity": "Segurança de senha",
+        "changeYourPassword": "Mude sua senha",
+        "oldPassword": "Senha antiga",
+        "newPassword": "Nova senha",
+        "confirmation": "Confirmação",
+        "updatePassword": "Atualizar senha"
+      }
+    },
+    "checkout": {
+      "orderForm": {
+        "modifyAddress": "Alterar endereço",
+        "order": "Pedido",
+        "continueShopping": "Continuar minhas compras"
+      },
+      "orderSummary": {
+        "forThePurchaseOf": "Para a compra de"
+      }
+    },
+    "login": {
+      "smsSent": {
+        "timeToCheck": "Hora de verificar seu telefone",
+        "mainMessage": "Por favor insira o código recebido para o número",
+        "notReceived": "Não recebeu sua mensagem?"
+      },
+      "passwordlessFallbackDialog": {
+        "somethingWentWrong": "Opa, algo deu errado",
+        "couldntLogIn": "Parece que você não conseguiu fazer login com seu dispositivo.",
+        "connectMagicLink": "Gostaria de se conectar recebendo um link por e-mail?"
+      },
+      "passwordlessReset": {
+        "getEmail": "Receba um e-mail de redefinição de senha",
+        "aboutToResetPassword": "Você está prestes a redefinir sua senha. Digite seu endereço de e-mail abaixo para receber um link de redefinição de senha.",
+        "resetMyPassword": "Resetar minha senha"
+      }
+    },
+    "verification": {
+      "smsSent": {
+        "mainMessage": "Por favor insira o código recebido para o número"
+      },
+      "identityVerification": {
+        "letsVerify": "Vamos verificar sua identidade",
+        "toStartScan": "Para começar a verificar, escaneie este código QR com seu smartphone.",
+        "verificationInProgress": "Verificação em andamento",
+        "continueOnSmartphone": "Continue o processo em seu smartphone.",
+        "identityVerified": "Identidade verificada",
+        "thisRequestExpired": "Esta solicitação expirou",
+        "requestIsNotValidAnymore": "Infelizmente, esta solicitação não é mais válida. Você pode fechar este pop-up e iniciar uma nova verificação.",
+        "identityVerifiedSuccessfully": "Sua identidade foi verificada com sucesso.",
+        "click": "Clique",
+        "toUpdateOr": "para atualizar suas informações ou",
+        "toIgnore": "para ignorar os resultados desta verificação de identidade."
+      }
+    },
+    "cartSideBar": {
+      "title": "Meu carrinho",
+      "empty": "Seu carrinho está vazio.",
+      "emptyMessage": "Você pode adicionar itens ao seu carrinho clicando no botão \"Adicionar ao carrinho\" na página do produto.",
+      "currency": "R$",
+      "shipping": "Envio",
+      "free": "Gratuito",
+      "checkout": "Fazer o Checkout"
+    },
+    "heroSection": {
+      "brandMessage": "Versátil. Sustentável. Pronto para brilhar.",
+      "shopMen": "Para Homens",
+      "shopWomen": "Para Mulheres"
+    },
+    "navBar": {
+      "login": "Log in",
+      "accountSettings": "Configurações da conta",
+      "orders": "Pedidos",
+      "logout": "Sair"
+    },
+    "toast": {
+      "AddToCartToast": {
+        "addedToCart": "Adicionado ao carrinho",
+        "viewCart": "Ver carrinho",
+        "checkoutNow": "Ir para Checkout"
+      }
+    }
+  },
+  "views": {
+    "account": {
+      "accountEditPersonalView": {
+        "title": "Atualize suas informações pessoais",
+        "textMessage": "Esta informação será utilizada para todas as suas faturas e para verificar a sua identidade quando as suas encomendas forem entregues.",
+        "firstName": "Primeiro Nome *",
+        "lastName": "Sobrenome *",
+        "birthday": "Data aniversário"
+      },
+      "accountEditAddressView": {
+        "title": "Atualize seu endereço residencial",
+        "textMessage": "Seu endereço residencial será usado para entregar seus pedidos e será seu endereço de cobrança padrão."
+      },
+      "accountView": {
+        "myPersonalInformation": "Minhas informações pessoais",
+        "securitySettings": "Configurações de segurança"
+      },
+      "passwordResetView": {
+        "welcomeBack": "Bem-vindo novamente",
+        "toFinaliseChooseAPassword": "Para finalizar sua redefinição de senha, escolha uma nova senha.",
+        "weRecommendAPasswordManager": "Recomendamos o uso de um gerenciador de senhas para gerar e armazenar suas senhas com segurança.",
+        "changeYourPassword": "Mude sua senha",
+        "newPassword": "Nova senha",
+        "passwordMatch": "Senhas correspodem",
+        "resetPassword": "Redefinir senha"
+      }
+    },
+    "checkoutView": {
+      "checkout": "Checkout",
+      "empty": "Seu carrinho está vazio.",
+      "emptyMessage": "Você pode adicionar itens ao seu carrinho clicando no botão \"Adicionar ao carrinho\" na página do produto."
+    },
+    "homeView": {
+      "trending": "Tendências"
+    },
+    "loginView": {
+      "title": "Faça login na sua conta",
+      "or": "OU"
+    },
+    "ordersView": {
+      "noOders": "Sem pedidos",
+      "yourOrders": "Seus pedidos"
+    },
+    "productView": {
+      "back": "Voltar",
+      "raiting": "56 avaliações",
+      "color": "Cor",
+      "size": "Tamanho",
+      "shippingMessage": "envio de 2 a 4 dias",
+      "addToCart": "Adicionar ao carrinho",
+      "goHome": "Ir para inicio",
+      "includingVATplusShipping": "incl. impostos e frete"
+    },
+    "signupView": {
+      "title": "Criar uma nova conta",
+      "or": "OU"
+    },
+    "dataVerificationView": {
+      "success": "Sucesso!",
+      "yourEmailWasUpdated": "Seu e-mail foi atualizado 🎉",
+      "oops": "Oops ...",
+      "anErrorOccured": "Ocorreu um erro ao verificar seu e-mail",
+      "loading": "Carregando",
+      "orderNumber": "Pedido #",
+      "items": "itens",
+      "viewDetails": "Ver detalhes"
+    }
+  },
+  "validation": {
+    "email": {
+      "emailIsRequired": "Seu e-mail é obrigatório",
+      "validEmailRequired": "É necessário um e-mail válido"
+    },
+    "firstName": {
+      "nameRequired": "Seu primeiro nome é obrigatório",
+      "validNameRequired": "É necessário um nome válido"
+    },
+    "lastName": {
+      "nameRequired": "Seu sobrenome é obrigatório",
+      "validNameRequired": "É necessário um nome válido"
+    },
+    "phone": {
+      "phoneRequired": "Seu número de telefone é obrigatório"
+    },
+    "street": {
+      "streetRequired": "A rua é obrigatória"
+    },
+    "city": {
+      "cityRequired": "A cidade é obrigatória"
+    },
+    "country": {
+      "countryRequired": "O país é obrigatório"
+    },
+    "zipCode": {
+      "zipCodeRequired": "O CEP é obrigatório"
+    },
+    "password": {
+      "passwordRequired": "Sua senha é necessária",
+      "EightCharacters": "Sua senha deve conter pelo menos 8 caracteres"
+    }
+  },
+  "toast": {
+    "error": {
+      "formIsInvalid": "O formulário é inválido",
+      "invalidForm": "Formulário inválido",
+      "failedToUpdateProfile": "Falha ao atualizar o perfil",
+      "enterAPhoneNumber": "Insira um número de telefone",
+      "invalidEmail": "E-mail inválido"
+    },
+    "info": {
+      "accountDeleted": "Conta apagada"
+    },
+    "success": {
+      "codeSuccessfullyValidated": "Código validado com sucesso"
+    }
+  },
+  "error": {
+    "anErrorOccurred": "Um erro ocorreu"
+  },
+  "registration": {
+    "createYourAccount": "crie sua conta",
+    "createAccount": "Criar uma conta",
+    "weAreCreatingYourAccount": "Estamos criando sua conta"
+  },
+  "passkey": {
+    "recoverPasskey": "Recuperar minha senha"
+  },
+  "luxeShop": {
+    "privacyPolicyTerms": "Ao criar uma conta, você concorda em aceitar os Termos e Condições Gerais de Uso e que seus dados serão processados ​​de acordo com a Política de Privacidade da Heline.",
+    "marketingEmailsCheckbox": "Concordo em receber informações por e-mail sobre ofertas, serviços, produtos e eventos da Heline ou de outras empresas do grupo, de acordo com a Política de Privacidade."
+  },
+  "shop": {
+    "productNotFound": "Produto não encontrado",
+    "cart": "Cart",
+    "brandMessage": "Versátil. Sustentável. Pronto para brilhar.",
+    "shopMen": "Para Homens",
+    "shopWomen": "Para Mulheres",
+    "subTotal": "Sub-Total",
+    "cartSideBar": {
+      "title": "Meu carrinho",
+      "empty": "Seu carrinho está vazio.",
+      "emptyMessage": "Você pode adicionar itens ao seu carrinho clicando no botão \"Adicionar ao carrinho\" na página do produto.",
+      "subTotal": "SubTotal",
+      "currency": "R$",
+      "shipping": "Envio",
+      "free": "Gratuito",
+      "checkout": "Fazer o Checkout"
+    },
+    "product": {
+      "rating": "56 avaliações",
+      "color": "Cor",
+      "size": "Tamanho",
+      "shippingMessage": "envio de 2 a 4 dias",
+      "addToCart": "Adicionar ao carrinho",
+      "includingVATplusShipping": "incl. impostos e frete",
+      "when": "When?",
+      "category1": {
+        "title": "CLOTHING FOR MEN"
+      },
+      "category2": {
+        "title": "CLOTHING FOR WOMEN"
+      }
+    },
+    "order": {
+      "forThePurchaseOf": "Para a compra de",
+      "modifyAddress": "Alterar endereço",
+      "order": "Pedido",
+      "continueShopping": "Continuar minhas compras",
+      "noOders": "Sem pedidos",
+      "yourOrders": "Seus pedidos",
+      "orderNumber": "Pedido #",
+      "items": "itens",
+      "viewDetails": "Ver detalhes"
+    },
+    "trending": "Tendências",
+    "addedToCart": "Adicionado ao carrinho",
+    "viewCart": "Ver carrinho",
+    "checkoutNow": "Ir para Checkout",
+    "thisIsAGift": "isto é um presente",
+    "orderSummary": "Resumo do pedido",
+    "confirmAndPay": "Confirme e pague",
+    "deliveryStatus": "Status de entrega",
+    "delivered": "Entregue",
+    "iDidNotReceive": "Não recebi meu pedido",
+    "deliveredTo": "Entregue a",
+    "orders": "Pedidos",
+    "transit": "Em trânsito",
+    "womenFashion": "Moda feminina",
+    "menFashion": "Moda masculina"
+  }
+}
