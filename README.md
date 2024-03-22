@@ -1,4 +1,4 @@
-# Transmit Security Webinar - March 26 2024
+# Transmit Security Webinar - March 26, 2024
 
 This repository contains three branches:
 
@@ -11,10 +11,10 @@ Software installed:
 
 ## Getting started
 
-Clone this repository, make sure to select the branch `adding-passkeys-starter`
+Clone this repository, make sure to select the branch `adding-detectionandresponse-starter`
 
 ```bash
-git clone -b adding-detectionandresponse-starter https://github.com/TransmitSecurity/Feb26Workshop.git
+git clone -b adding-detectionandresponse-starter https://github.com/TransmitSecurity/Mar26Workshop.git
 ```
 
 Install the project dependencies.
