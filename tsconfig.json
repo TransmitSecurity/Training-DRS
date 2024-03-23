@@ -3,10 +3,8 @@
   "compilerOptions": {
     "types": [
       "vitest/globals",
-      "@intlify/unplugin-vue-i18n/messages"
-    ],
-    "lib": [
-      "dom"
+      "@intlify/unplugin-vue-i18n/messages",
+      "web"
     ],
   },
   "references": [

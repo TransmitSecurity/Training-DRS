@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import AccountMenu from '@/components/account/AccountMenu.vue'
 import ProfileView from '@/components/account/ProfileView.vue'
-import SecurityView from '@/components/account/SecurityView.vue'
 import AccountSettingsView from '@/components/account/AccountSettingsView.vue'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
@@ -11,7 +10,6 @@ const route = useRoute()
 
 const routeViews = [
   { routeName: 'accountProfile', accountComponent: ProfileView },
-  { routeName: 'accountSecurity', accountComponent: SecurityView },
   { routeName: 'accountSettings', accountComponent: AccountSettingsView },
 ]
 

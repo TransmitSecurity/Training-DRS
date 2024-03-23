@@ -5,14 +5,7 @@
  *
  * Lists the different sub menus the user can access
  */
-import {
-  UserCircleIcon,
-  Cog8ToothIcon,
-  KeyIcon,
-  BellIcon,
-  CreditCardIcon,
-  ArrowsRightLeftIcon,
-} from '@heroicons/vue/24/outline'
+import { UserCircleIcon, Cog8ToothIcon } from '@heroicons/vue/24/outline'
 
 import AccountMenuButton from '@/components/account/AccountMenuButton.vue'
 import { useRoute } from 'vue-router'
@@ -24,10 +17,6 @@ const route = useRoute()
 const menuRoutes = ref([
   { title: t('menu.profile'), icon: UserCircleIcon, routeName: 'accountProfile' },
   { title: t('menu.account'), icon: Cog8ToothIcon, routeName: 'accountSettings' },
-  { title: t('menu.security'), icon: KeyIcon, routeName: 'accountSecurity' },
-  { title: t('menu.cards'), icon: CreditCardIcon, routeName: 'accountCards' },
-  { title: t('menu.transfers'), icon: ArrowsRightLeftIcon, routeName: 'accountTransfers' },
-  { title: t('menu.notifications'), icon: BellIcon, routeName: 'accountNotifications' },
 ])
 
 function accountRouteSelected(routeName: string) {

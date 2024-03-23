@@ -50,7 +50,8 @@ onBeforeMount(async () => {
 async function registerWebauthn() {
   try {
     const webauthnEncodedResult = await window.tsPlatform.webauthn.register(userSession.email)
-    reportAction(Action.REGISTER)
+    // WEBINAR ACTION - Report the account authentication update action
+    reportAction(Action.ACCOUNT_AUTH_CHANGE)
     const response = await registerApi.registerWebauthn({
       webauthnEncodedResult,
     })

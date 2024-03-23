@@ -1,6 +1,7 @@
 import router from '@/router'
 import { userSessionStore } from '@/store/userSession'
 import { UserApi, type UserDto } from '@transmitsecurity-dev/ts-demo-client-lib'
+// WEBINAR ACTION - import the methods and helpers linked to the Detection and Response SDK
 import { reportAction, Action, clearUser, setUserId } from './risk'
 
 const backendAPI = import.meta.env.VITE_BACKEND_URL
@@ -9,6 +10,7 @@ export async function logout() {
   if (!sessionStore.isAuthenticated) {
     return
   }
+  // WEBINAR ACTION - Report the logout action
   reportAction(Action.LOGOUT)
   clearSession()
   const userApi = new UserApi(undefined, backendAPI)
@@ -36,12 +38,16 @@ export async function loadSession(): Promise<{ user: UserDto } | undefined> {
   try {
     const sessionStore = userSessionStore()
     if (sessionStore.tsPlatformLoaded) {
+      console.log('Looking for an existing user session')
+      // WEBINAR ACTION - Report a login action
       // Report a login action to the detection and response service
       const actionToken = await reportAction(Action.LOGIN)
       console.log('Action token', actionToken)
 
+      // WEBINAR ACTION - Send the action token to the backend when getting the user data
       // Retrieve the current user (if there is one)
       const userResponse = await userApi.getCurrentUser(actionToken)
+
       console.log(userResponse.data.userData)
       console.log('riskRecommendation', userResponse.data.riskRecommendation)
       if (userResponse.status !== 200) {
@@ -50,6 +56,7 @@ export async function loadSession(): Promise<{ user: UserDto } | undefined> {
         return
       }
 
+      // WEBINAR ACTION 2 - Set the user ID
       // The user is authenticated, set the user in the risk SDK
       setUserId(userResponse.data.userData.user_id)
 
@@ -63,7 +70,7 @@ export async function loadSession(): Promise<{ user: UserDto } | undefined> {
       document.dispatchEvent(event)
       return { user: userResponse.data.userData }
     } else {
-      console.log('Trying to load session while platform is not loaded')
+      console.log('Trying to load session while platform is not loaded - aborted')
       return
     }
   } catch (error) {

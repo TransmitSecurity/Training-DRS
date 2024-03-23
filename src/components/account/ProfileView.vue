@@ -189,7 +189,7 @@ async function updatePostalAddress() {
               :label="$t('userData.email')"
               :data="email"
               :verified="emailVerified"
-              verify-route-name="accountSecurity"
+              verify-route-name="accountProfile"
             />
           </div>
 
@@ -198,12 +198,12 @@ async function updatePostalAddress() {
               :label="$t('userData.phone')"
               :data="phone"
               :verified="phoneVerified"
-              verify-route-name="accountSecurity"
+              verify-route-name="accountProfile"
             />
           </div>
         </div>
 
-        <router-link :to="{ name: 'accountSecurity' }" class="link link-hover link-primary">{{
+        <router-link :to="{ name: 'accountProfile' }" class="link link-hover link-primary">{{
           $t('account.profile.editYourContactInformation')
         }}</router-link>
       </div>

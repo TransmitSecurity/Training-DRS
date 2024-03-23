@@ -65,8 +65,7 @@
     "passwordUpdated": "Password updated",
     "invalidPassword": "Invalid password",
     "forgotPassword": "I forgot my password",
-    "passwordsMatch": "Passwords match",
-    "repeatYourPassword": "Repeat your password"
+    "passwordsMatch": "Passwords match"
   },
   "otp": {
     "pleaseEnterTheCodeReceived": "Please enter the code sent to",
@@ -125,8 +124,7 @@
   "registration": {
     "createYourAccount": "Create your account",
     "createAccount": "Create account",
-    "billingInformation": "Billing information",
-    "weAreCreatingYourAccount": "We are creating your account"
+    "billingInformation": "Billing information"
   },
   "account": {
     "profile": {

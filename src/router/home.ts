@@ -13,11 +13,6 @@ export default [
     component: () => import('../views/AboutView.vue'),
   },
   {
-    path: '/ido/info',
-    name: 'idoInfo',
-    component: () => import('../views/IdoInfo.vue'),
-  },
-  {
     path: '/theme-preview',
     name: 'theme-preview',
     component: () => import('../views/ThemeView.vue'),

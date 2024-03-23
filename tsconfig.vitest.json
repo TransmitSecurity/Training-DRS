@@ -1,21 +1,11 @@
 {
   "extends": "./tsconfig.app.json",
   "exclude": [],
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.js",
-    "src/**/*.tsx",
-    "src/**/*.vue"
-  ],
+  "include": ["src/**/*.ts","src/**/*.js", "src/**/*.tsx", "src/**/*.vue"],  
   "compilerOptions": {
     "composite": true,
-    "lib": [
-      "DOM"
-    ],
-    "types": [
-      "node",
-      "vitest/globals"
-    ],
+    "lib": [],
+    "types": ["node","vitest/globals"],
     "target": "ESNext",
     "useDefineForClassFields": true,
     "module": "ESNext",
@@ -24,8 +14,8 @@
     "jsx": "preserve",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
+    "esModuleInterop": true,    
+    "skipLibCheck": true,    
     "baseUrl": "./"
-  }
+  }  
 }

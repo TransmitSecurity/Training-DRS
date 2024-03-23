@@ -1,16 +1,17 @@
 <script setup lang="ts">
-import HomeLuxuryShop from '@/components/shop/luxe/HomeLuxuryShop.vue'
-import HeroHome from '@/components/blog/HeroHome.vue'
-import BankHome from '@/components/bank/BankHome.vue'
+import BankHomeLoggedIn from '@/components/bank/BankHomeLoggedIn.vue'
+import BankHomeLoggedOut from '@/components/bank/BankHomeLoggedOut.vue'
+import { userSessionStore } from '@/store/userSession'
+
+import { storeToRefs } from 'pinia'
 import FooterSection from '@/components/FooterSection.vue'
+
+const userSession = userSessionStore()
+const userSessionRefs = storeToRefs(userSession)
 </script>
 
 <template>
-  <main class="flex flex-col items-center w-full bg-base-100 home">
-    <bank-home />
-    <!-- <home-luxury-shop /> -->
-    <!-- <botanical-gardens-home /> -->
-    <!-- <hero-home /> -->
-  </main>
+  <bank-home-logged-in v-if="userSession.isAuthenticated" />
+  <bank-home-logged-out v-else />
   <footer-section />
 </template>

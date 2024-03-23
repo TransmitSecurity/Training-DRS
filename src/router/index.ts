@@ -5,7 +5,6 @@ import authentication from './authentication'
 import { loadSession } from '@/helpers/session'
 import { userSessionStore } from '@/store/userSession'
 import NotFoundView from '@/views/NotFoundView.vue'
-import shop from './shop'
 import bank from './bank'
 
 const router = createRouter({
@@ -14,7 +13,6 @@ const router = createRouter({
     ...home,
     ...account,
     ...authentication,
-    ...shop,
     ...bank,
     { path: '/:pathMatch(.*)*', name: 'notFound', component: NotFoundView },
   ],
@@ -42,7 +40,6 @@ router.beforeEach(async (to, from, next) => {
     const result = await loadSession()
     sessionStore.setSessionLoaded(true)
     if (result) {
-      console.log(result)
       sessionStore.setAuthenticated(true)
       // Prevent logged in user to go to login pages
       if (to.matched.some(record => record.meta.requiresNotAuth)) next('/')

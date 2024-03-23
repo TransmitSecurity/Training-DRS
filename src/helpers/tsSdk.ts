@@ -18,20 +18,15 @@ export function initWhenLoaded() {
         console.log(response)
         if (response.status == 200) {
           console.log('TSPlatform -- Starting init')
+          // https://developer.transmitsecurity.com/guides/risk/quick_start_web/#step-2-load-sdk
           await window.tsPlatform.initialize({
             clientId: response.data.clientId,
             webauthn: { serverPath: import.meta.env.VITE_TS_SERVER_PATH },
-            ido: {
-              serverPath: import.meta.env.VITE_TS_IDO_SERVER_PATH,
-              applicationId: import.meta.env.VITE_TS_IDO_APP_ID,
-            },
           })
           console.log('TSPlatform -- End init')
           // Dispatch an event indicating that the SDK was initialized
           // this is helpful whenever webauthn authentication needs to be used
           // and we need to wait for the SDK
-          const userSession = userSessionStore()
-          userSession.setTsPlatformLoaded(true)
           const event = new CustomEvent('tsPlatformLoaded', {
             detail: {
               message: 'TSPlatform loaded',
@@ -39,6 +34,8 @@ export function initWhenLoaded() {
             },
           })
           document.dispatchEvent(event)
+          const userSession = userSessionStore()
+          userSession.setTsPlatformLoaded(true)
         }
       } catch (error) {
         console.log('Error while retrieving the client ID')

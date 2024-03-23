@@ -17,6 +17,7 @@ const sessionLoading = ref(true)
 
 onBeforeMount(() => {
   // Add a script tag to the page to download the ts-platform sdk
+  // https://developer.transmitsecurity.com/guides/risk/quick_start_web/#step-2-load-sdk
   const platformScript = document.createElement('script')
   platformScript.src = import.meta.env.VITE_PLATFORM_SDK_URL
   platformScript.defer = true

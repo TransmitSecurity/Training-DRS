@@ -1,3 +1,4 @@
+// https://developer.transmitsecurity.com/guides/risk/recommendations/#action-types
 export enum Action {
   LOGIN = 'login',
   REGISTER = 'register',
@@ -10,6 +11,8 @@ export enum Action {
   CREDITS_CHANGE = 'credits_change',
 }
 
+// WEBINAR ACTION - Add a helper to report actions
+// https://developer.transmitsecurity.com/guides/risk/quick_start_web/#step-4-report-actions
 export async function reportAction(actionType: Action) {
   try {
     const result = await window.tsPlatform.drs.triggerActionEvent(actionType)
@@ -19,10 +22,14 @@ export async function reportAction(actionType: Action) {
   }
 }
 
+// WEBINAR ACTION - Add a helper to set the user ID
+// https://developer.transmitsecurity.com/guides/risk/quick_start_web/#step-3-set-user
 export async function setUserId(userId: string) {
   return await window.tsPlatform.drs.setAuthenticatedUser(userId)
 }
 
+// WEBINAR ACTION - ADD a helper to clear the user ID
+// https://developer.transmitsecurity.com/guides/risk/quick_start_web/#step-6-clear-user
 export async function clearUser() {
   return await window.tsPlatform.drs.clearUser()
 }
