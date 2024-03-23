@@ -14,7 +14,7 @@ export async function logout() {
     return;
   }
   // WEBINAR ACTION - Report the logout action
-  reportAction(Action.LOGOUT);
+  /* reportAction(Action.LOGOUT); */
   clearSession();
   const userApi = new UserApi(undefined, backendAPI);
   // Dispatch an event other components can subscribe to
@@ -42,6 +42,7 @@ export async function loadSession(): Promise<{ user: UserDto } | undefined> {
     const sessionStore = userSessionStore();
     if (sessionStore.tsPlatformLoaded) {
       console.log("Looking for an existing user session");
+
       // WEBINAR ACTION - Report a login action
       // Report a login action to the detection and response service
       /*

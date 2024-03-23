@@ -4,115 +4,126 @@
  * and a password input providing a way for a user
  * to either login or signup with a password.
  */
-import { type Ref, ref, toRefs, computed, onMounted } from 'vue'
-import useVuelidate from '@vuelidate/core'
-import UserInput from '@/components/inputs/UserInput.vue'
-import { useToast } from 'vue-toastification'
-import PasswordInput from '@/components/inputs/PasswordInput.vue'
-import { useI18n } from 'vue-i18n'
+import { type Ref, ref, toRefs, computed, onMounted } from "vue";
+import useVuelidate from "@vuelidate/core";
+import UserInput from "@/components/inputs/UserInput.vue";
+import { useToast } from "vue-toastification";
+import PasswordInput from "@/components/inputs/PasswordInput.vue";
+import { useI18n } from "vue-i18n";
 import {
   emailRule,
   firstNameRule,
   lastNameRule,
   phoneRule,
   signupPasswordRule,
-} from '@/helpers/validationRules'
-import { useRouter } from 'vue-router'
-import { RegistrationApi, AuthenticationApi } from '@transmitsecurity-dev/ts-demo-client-lib'
-import { loadSession } from '@/helpers/session'
-import { userSessionStore } from '@/store/userSession'
-import { handleError } from '@/helpers/errors'
-import { helpers, required, sameAs } from '@vuelidate/validators'
-import { Action, reportAction } from '@/helpers/risk'
+} from "@/helpers/validationRules";
+import { useRouter } from "vue-router";
+import {
+  RegistrationApi,
+  AuthenticationApi,
+} from "@transmitsecurity-dev/ts-demo-client-lib";
+import { loadSession } from "@/helpers/session";
+import { userSessionStore } from "@/store/userSession";
+import { handleError } from "@/helpers/errors";
+import { helpers, required, sameAs } from "@vuelidate/validators";
+import { Action, reportAction } from "@/helpers/risk";
 
-const { t } = useI18n()
-const firstName: Ref<string> = ref('')
-const lastName = ref('')
-const phone = ref('')
-const email = ref('')
-const password = ref('')
-const passwordConfirmation = ref('')
-const toast = useToast()
-const loading = ref(false)
+const { t } = useI18n();
+const firstName: Ref<string> = ref("");
+const lastName = ref("");
+const phone = ref("");
+const email = ref("");
+const password = ref("");
+const passwordConfirmation = ref("");
+const toast = useToast();
+const loading = ref(false);
 
-const router = useRouter()
-defineEmits(['resetPassword', 'onLoginSuccess', 'onLoginError'])
-const userSession = userSessionStore()
+const router = useRouter();
+defineEmits(["resetPassword", "onLoginSuccess", "onLoginError"]);
+const userSession = userSessionStore();
 
-type Screen = 'userInfo' | 'passwordCreation'
-const screenToShow: Ref<Screen> = ref('userInfo')
+type Screen = "userInfo" | "passwordCreation";
+const screenToShow: Ref<Screen> = ref("userInfo");
 /**
  * Server APIs
  */
-const authApi = new AuthenticationApi(undefined, import.meta.env.VITE_BACKEND_URL)
-const registerApi = new RegistrationApi(undefined, import.meta.env.VITE_BACKEND_URL)
+const authApi = new AuthenticationApi(
+  undefined,
+  import.meta.env.VITE_BACKEND_URL
+);
+const registerApi = new RegistrationApi(
+  undefined,
+  import.meta.env.VITE_BACKEND_URL
+);
 
 onMounted(() => {
   if (userSession.tsPlatformLoaded) {
-    checkWebauthnSupport()
+    checkWebauthnSupport();
   } else {
     // The ts platform SDK is not loaded yet, we need to wait
     // for it to be loaded and then initialize webauthn
-    document.addEventListener('tsPlatformLoaded', function (e) {
-      checkWebauthnSupport()
-    })
+    document.addEventListener("tsPlatformLoaded", function (e) {
+      checkWebauthnSupport();
+    });
   }
-})
+});
 
 async function checkWebauthnSupport() {
-  console.log('Verifying if webauthn is supported')
-  window.tsPlatform.webauthn.isPlatformAuthenticatorSupported().then((supported: boolean) => {
-    userSession.setWebAuthnSupported(supported)
-    console.log(`Webauthn is ${supported ? '' : 'not'} supported`)
-  })
+  console.log("Verifying if webauthn is supported");
+  window.tsPlatform.webauthn
+    .isPlatformAuthenticatorSupported()
+    .then((supported: boolean) => {
+      userSession.setWebAuthnSupported(supported);
+      console.log(`Webauthn is ${supported ? "" : "not"} supported`);
+    });
 }
 
 async function continueSignup() {
-  const isFormCorrect = await dataValidation$.value.$validate()
-  console.log(`formCorrect ${isFormCorrect}`)
+  const isFormCorrect = await dataValidation$.value.$validate();
+  console.log(`formCorrect ${isFormCorrect}`);
   if (isFormCorrect) {
-    screenToShow.value = 'passwordCreation'
+    screenToShow.value = "passwordCreation";
   }
 }
 
 async function signupPassword() {
-  const isFormCorrect = await passwordValidation$.value.$validate()
-  console.log(`formCorrect ${isFormCorrect}`)
+  const isFormCorrect = await passwordValidation$.value.$validate();
+  console.log(`formCorrect ${isFormCorrect}`);
   if (isFormCorrect) {
     // Register a new account with a password
-    loading.value = true
+    loading.value = true;
     try {
       // WEBINAR ACTION - Report the registration action
-      reportAction(Action.REGISTER)
+      /* reportAction(Action.REGISTER) */
       const response = await registerApi.registerWithPassword({
         email: email.value,
         password: password.value,
         firstName: firstName.value,
         lastName: lastName.value,
         phone: phone.value,
-      })
-      loading.value = false
+      });
+      loading.value = false;
       if (response.status == 201) {
         // Retrieve user information and
         // indicate that the user is now authenticated
-        console.log(response)
-        await loadSession()
+        console.log(response);
+        await loadSession();
         // Suggest registering webauthn, if it is supported
         if (userSession.webauthnSupported) {
-          router.push({ name: 'registerWebauthn' })
+          router.push({ name: "registerWebauthn" });
         } else {
-          router.push({ name: 'home' })
+          router.push({ name: "home" });
         }
       } else {
-        toast.error(response.statusText)
+        toast.error(response.statusText);
       }
     } catch (error) {
-      handleError(error)
+      handleError(error);
     } finally {
-      loading.value = false
+      loading.value = false;
     }
   } else {
-    toast.error(t('toast.error.invalidForm'))
+    toast.error(t("toast.error.invalidForm"));
   }
 }
 
@@ -121,47 +132,54 @@ const dataValidationRules = {
   lastName: lastNameRule(),
   phone: phoneRule(),
   email: emailRule(),
-}
+};
 
 const dataValidation$ = useVuelidate(dataValidationRules, {
   firstName,
   lastName,
   phone,
   email,
-})
+});
 
 const passwordValidationRules = {
   password: signupPasswordRule(),
   passwordConfirmation: {
-    required: helpers.withMessage(t('password.confirmNewPassword'), required),
-    sameAsPassword: helpers.withMessage(t('password.passwordsDontMatch'), sameAs(password)),
+    required: helpers.withMessage(t("password.confirmNewPassword"), required),
+    sameAsPassword: helpers.withMessage(
+      t("password.passwordsDontMatch"),
+      sameAs(password)
+    ),
     $autoDirty: true,
   },
-}
+};
 
 const passwordValidation$ = useVuelidate(passwordValidationRules, {
   password,
   passwordConfirmation,
-})
+});
 
 const errorFound = computed(() => {
-  return dataValidation$.value.$errors && dataValidation$.value.$errors.length > 0
-})
+  return (
+    dataValidation$.value.$errors && dataValidation$.value.$errors.length > 0
+  );
+});
 
 const errorMessage = computed(() => {
   if (errorFound.value) {
-    return dataValidation$.value.$errors[0].$message.toString()
+    return dataValidation$.value.$errors[0].$message.toString();
   } else {
-    return 'Hidden error message'
+    return "Hidden error message";
   }
-})
+});
 </script>
 
 <template>
   <div class="flex flex-grow flex-col px-6 py-12 lg:px-8 bg-base-200">
     <div class="flex flex-col items-center sm:mx-auto sm:w-full sm:max-w-sm">
-      <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-base-content">
-        {{ $t('registration.createYourAccount') }}
+      <h2
+        class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-base-content"
+      >
+        {{ $t("registration.createYourAccount") }}
       </h2>
     </div>
 
@@ -213,7 +231,7 @@ const errorMessage = computed(() => {
             class="btn btn-block btn-primary"
             :class="loading ? 'loading loading-spinner btn-disabled' : ''"
           >
-            {{ $t('authentication.signup') }}
+            {{ $t("authentication.signup") }}
           </button>
         </div>
       </form>
@@ -250,10 +268,10 @@ const errorMessage = computed(() => {
             class="btn btn-block btn-primary"
             :class="loading ? 'loading loading-spinner btn-disabled' : ''"
           >
-            {{ $t('global.continue') }}
+            {{ $t("global.continue") }}
           </button>
           <button @click="screenToShow = 'userInfo'" class="btn btn-ghost">
-            {{ $t('global.back') }}
+            {{ $t("global.back") }}
           </button>
         </div>
       </form>
@@ -261,9 +279,9 @@ const errorMessage = computed(() => {
 
     <div class="mt-5 text-center">
       <p class="text-sm">
-        {{ $t('authentication.alreadyHaveAccount') }}
+        {{ $t("authentication.alreadyHaveAccount") }}
         <router-link :to="{ name: 'login' }" class="link text-accent">
-          {{ $t('authentication.login') }}
+          {{ $t("authentication.login") }}
         </router-link>
       </p>
     </div>
