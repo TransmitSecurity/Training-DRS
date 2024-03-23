@@ -202,7 +202,7 @@ async function registerWebauthn() {
 
 
 This code contains an example user experience of a bank transfer.
-Whenever the transfer is validated, you should report the "transaction" action
+Whenever the transfer is validated, you should report the "transaction" action in `src/views/bank/BankTransferValidationView.vue`:
 
 ```js
 function validateTransfer() {

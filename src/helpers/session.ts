@@ -64,7 +64,7 @@ export async function loadSession(): Promise<{ user: UserDto } | undefined> {
 
       // WEBINAR ACTION 2 - Set the user ID
       // The user is authenticated, set the user in the risk SDK
-      setUserId(userResponse.data.userData.user_id);
+      /* setUserId(userResponse.data.userData.user_id); */
 
       // Save the user information locally
       sessionStore.setUserData(userResponse.data.userData);
