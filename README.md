@@ -1,11 +1,9 @@
 # Transmit Security Webinar - March 26th, 2024
 
 This repository contains three branches:
-- **main**: shows a full Detection and Response integration
+- **main**: shows a full Detection and Response integration. This is the solution of the webinar, where the Detection and Response Service is integrated to prevent a session from being used when a risk is detected.
 - **adding-drs-starter** is the starting point of the webinar, a base code to learn how to implement the Transmit Security's Detection and Response Service in a project
 - **adding-detection-solution** is the first solution of the webinar, where the Detection and Response Service is integrated in silent (monitoring) mode. 
-- **adding-response-solution** is the solution of the webinar, where the Detection and Response Service is integrated to prevent a session from being used when a risk is detected.
-
 
 ## Prerequistes
 
