@@ -56,6 +56,8 @@
     "vue3-otp-input": "^0.4.1"
   },
   "devDependencies": {
+    "chromedriver": "^123.0.0",
+    "selenium-webdriver": "^4.18.1",
     "@commitlint/cli": "^17.6.7",
     "@commitlint/config-conventional": "^17.6.7",
     "@playwright/test": "^1.31.1",

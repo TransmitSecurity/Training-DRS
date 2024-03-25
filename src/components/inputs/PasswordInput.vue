@@ -6,34 +6,35 @@
  *
  * An eye icon also provides a way for the user to see or hide the password
  */
-import { ref, toRefs } from 'vue'
-import type { BaseValidation } from '@vuelidate/core'
-import { useInputValidation } from '@/composables/baseInput'
-import { EyeIcon, EyeSlashIcon as EyeOffIcon } from '@heroicons/vue/24/outline'
+import { ref, toRefs } from "vue";
+import type { BaseValidation } from "@vuelidate/core";
+import { useInputValidation } from "@/composables/baseInput";
+import { EyeIcon, EyeSlashIcon as EyeOffIcon } from "@heroicons/vue/24/outline";
 
 const props = withDefaults(
   defineProps<{
-    label: string
-    modelValue: string
-    validation: BaseValidation
-    displayValidMessage?: boolean
-    displayInvalidMessage?: boolean
-    validMessage?: string
-    responsive?: boolean
-    placeholder?: string
-    autofocus?: boolean
-    autocomplete?: string
+    label: string;
+    id?: string;
+    modelValue: string;
+    validation: BaseValidation;
+    displayValidMessage?: boolean;
+    displayInvalidMessage?: boolean;
+    validMessage?: string;
+    responsive?: boolean;
+    placeholder?: string;
+    autofocus?: boolean;
+    autocomplete?: string;
   }>(),
   {
     displayValidMessage: false,
     displayInvalidMessage: true,
     responsive: false,
-    validMessage: '',
-    placeholder: '',
+    validMessage: "",
+    placeholder: "",
     autofocus: false,
-    autocomplete: '',
-  },
-)
+    autocomplete: "",
+  }
+);
 
 const {
   label,
@@ -43,16 +44,17 @@ const {
   validation,
   responsive,
   placeholder,
-} = toRefs(props)
-const show = ref(false)
-const inputId = label?.value?.trim().replace(/\s/g, '_')
+} = toRefs(props);
+const show = ref(false);
+const inputId = props.id ? props.id : label?.value?.trim().replace(/\s/g, "_");
 
-const { labelClass, inputClass, messageClass, validationMessage } = useInputValidation({
-  validation: validation.value,
-  displayInvalidMessage: displayInvalidMessage.value,
-  displayValidMessage: displayValidMessage.value,
-  validMessage: validMessage.value,
-})
+const { labelClass, inputClass, messageClass, validationMessage } =
+  useInputValidation({
+    validation: validation.value,
+    displayInvalidMessage: displayInvalidMessage.value,
+    displayValidMessage: displayValidMessage.value,
+    validMessage: validMessage.value,
+  });
 </script>
 <template>
   <div
@@ -83,7 +85,12 @@ const { labelClass, inputClass, messageClass, validationMessage } = useInputVali
 
           <input
             class="input input-bordered input-light w-full text-base-content"
-            @input="$emit('update:modelValue', ($event?.target as HTMLInputElement).value)"
+            @input="
+              $emit(
+                'update:modelValue',
+                ($event?.target as HTMLInputElement).value
+              )
+            "
             :value="modelValue"
             :class="inputClass"
             :type="show ? 'text' : 'password'"

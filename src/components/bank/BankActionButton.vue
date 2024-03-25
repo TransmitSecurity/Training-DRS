@@ -4,32 +4,32 @@ import {
   CreditCardIcon,
   PencilSquareIcon,
   ArrowsRightLeftIcon,
-} from '@heroicons/vue/24/outline'
-import { computed } from 'vue'
+} from "@heroicons/vue/24/outline";
+import { computed } from "vue";
 
 const props = defineProps<{
-  text: string
-  icon: 'Transfer' | 'Card' | 'Iban' | 'Document'
-}>()
+  text: string;
+  icon: "Transfer" | "Card" | "Iban" | "Document";
+}>();
 
 const componentToLoad = computed(() => {
   switch (props.icon) {
-    case 'Transfer':
-      return ArrowsRightLeftIcon
+    case "Transfer":
+      return ArrowsRightLeftIcon;
 
-    case 'Card':
-      return CreditCardIcon
+    case "Card":
+      return CreditCardIcon;
 
-    case 'Iban':
-      return PencilSquareIcon
+    case "Iban":
+      return PencilSquareIcon;
 
-    case 'Document':
-      return DocumentTextIcon
+    case "Document":
+      return DocumentTextIcon;
 
     default:
-      return CreditCardIcon
+      return CreditCardIcon;
   }
-})
+});
 </script>
 
 <template>
