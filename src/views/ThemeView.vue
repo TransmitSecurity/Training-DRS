@@ -1,30 +1,34 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
-import { type DaisyThemes, useThemeManager, daisyThemes } from '@/plugins/themeManager'
-import { ref, computed } from 'vue'
-import { userPreferenceStore } from '@/store/userPreferences'
+import { RouterView } from "vue-router";
+import {
+  type DaisyThemes,
+  useThemeManager,
+  daisyThemes,
+} from "@/plugins/themeManager";
+import { ref, computed } from "vue";
+import { userPreferenceStore } from "@/store/userPreferences";
 
-const preference = userPreferenceStore()
-const $theme = useThemeManager()
+const preference = userPreferenceStore();
+const $theme = useThemeManager();
 const changeTheme = (e: any) => {
-  $theme.set(e.target.value as DaisyThemes)
+  $theme.set(e.target.value as DaisyThemes);
   // Persist theme in local storage
-  preference.setTheme(e.target.value)
-}
-const selected = computed(() => $theme.get())
-const useSystem = ref<boolean>($theme.watchSystemTheme())
-const toggleWatchSystem = () => $theme.watchSystemTheme(useSystem.value)
-const darkToggle = ref<HTMLInputElement>()
+  preference.setTheme(e.target.value);
+};
+const selected = computed(() => $theme.get());
+const useSystem = ref<boolean>($theme.watchSystemTheme());
+const toggleWatchSystem = () => $theme.watchSystemTheme(useSystem.value);
+const darkToggle = ref<HTMLInputElement>();
 const isDarkMode = computed(() => {
-  const { dark, light } = $theme.getDefaults()
-  if ($theme.get() === dark) return 0
-  else if ($theme.get() === light) return 1
+  const { dark, light } = $theme.getDefaults();
+  if ($theme.get() === dark) return 0;
+  else if ($theme.get() === light) return 1;
   else {
     // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-    if (darkToggle.value) darkToggle.value.indeterminate = true
+    if (darkToggle.value) darkToggle.value.indeterminate = true;
   }
-  return 2
-})
+  return 2;
+});
 </script>
 
 <template>
@@ -33,14 +37,18 @@ const isDarkMode = computed(() => {
       <div class="flexCol">
         <select
           v-model="selected"
-          @change="e => changeTheme(e)"
+          @change="(e) => changeTheme(e)"
           class="select select-primary w-full max-w-xs"
         >
           <optgroup label="DaisyUI default themes">
-            <option v-for="theme in daisyThemes.slice(0, 31)" :key="theme">{{ theme }}</option>
+            <option v-for="theme in daisyThemes.slice(0, 31)" :key="theme">
+              {{ theme }}
+            </option>
           </optgroup>
           <optgroup label="Custom themes">
-            <option v-for="theme in daisyThemes.slice(32)" :key="theme">{{ theme }}</option>
+            <option v-for="theme in daisyThemes.slice(32)" :key="theme">
+              {{ theme }}
+            </option>
           </optgroup>
         </select>
       </div>
@@ -63,32 +71,55 @@ const isDarkMode = computed(() => {
           class="swap swap-rotate"
           :class="{ 'swap-active': isDarkMode !== 2 && isDarkMode === 0 }"
         >
-          <span v-show="isDarkMode !== 2" class="swap-on material-icons-outlined text-3xl"
+          <span
+            v-show="isDarkMode !== 2"
+            class="swap-on material-icons-outlined text-3xl"
             >light_mode</span
           >
-          <span v-show="isDarkMode !== 2" class="swap-off material-icons-outlined text-3xl"
+          <span
+            v-show="isDarkMode !== 2"
+            class="swap-off material-icons-outlined text-3xl"
             >dark_mode</span
           >
         </label>
-        <span v-if="isDarkMode === 2" class="swap-off material-symbols-outlined text-3xl"
+        <span
+          v-if="isDarkMode === 2"
+          class="swap-off material-symbols-outlined text-3xl"
           >circle</span
         >
-        <input @change="$theme.toggleDark()" ref="darkToggle" type="checkbox" class="toggle" />
+        <input
+          @change="$theme.toggleDark()"
+          ref="darkToggle"
+          type="checkbox"
+          class="toggle"
+        />
       </div>
     </section>
     <section class="flex gap-x-4 justify-start">
       <span>Demo links:</span>
       <div class="flex flex-col">
-        <router-link :to="{ name: 'accountProfile' }" class="link link-hover link-primary">
+        <router-link
+          :to="{ name: 'accountProfile' }"
+          class="link link-hover link-primary"
+        >
           Account
         </router-link>
-        <router-link :to="{ name: 'home' }" class="link link-hover link-primary">
+        <router-link
+          :to="{ name: 'home' }"
+          class="link link-hover link-primary"
+        >
           Home
         </router-link>
-        <router-link :to="{ name: 'login' }" class="link link-hover link-primary">
+        <router-link
+          :to="{ name: 'login' }"
+          class="link link-hover link-primary"
+        >
           Login
         </router-link>
-        <router-link :to="{ name: 'signup' }" class="link link-hover link-primary">
+        <router-link
+          :to="{ name: 'signup' }"
+          class="link link-hover link-primary"
+        >
           Signup
         </router-link>
       </div>
@@ -104,11 +135,14 @@ const isDarkMode = computed(() => {
       <button class="btn btn-error">Error</button>
     </div>
     <div class="grid grid-cols-2 place-items-center gap-2 md:grid-cols-4">
-      <span class="badge">Default</span> <span class="badge badge-primary">Primary</span>
+      <span class="badge">Default</span>
+      <span class="badge badge-primary">Primary</span>
       <span class="badge badge-secondary">Secondary</span>
-      <span class="badge badge-accent">Accent</span> <span class="badge badge-info">Info</span>
+      <span class="badge badge-accent">Accent</span>
+      <span class="badge badge-info">Info</span>
       <span class="badge badge-success">Success</span>
-      <span class="badge badge-warning">Warning</span> <span class="badge badge-error">Error</span>
+      <span class="badge badge-warning">Warning</span>
+      <span class="badge badge-error">Error</span>
     </div>
     <div class="flex flex-col gap-3">
       <div class="flex flex-col gap-3 md:flex-row">
@@ -127,13 +161,27 @@ const isDarkMode = computed(() => {
         </div>
         <div class="flex flex-col gap-3 md:w-1/2">
           <progress value="20" max="100" class="progress">Default</progress>
-          <progress value="25" max="100" class="progress progress-primary">Primary</progress>
-          <progress value="30" max="100" class="progress progress-secondary">Secondary</progress>
-          <progress value="40" max="100" class="progress progress-accent">Accent</progress>
-          <progress value="45" max="100" class="progress progress-info">Info</progress>
-          <progress value="55" max="100" class="progress progress-success">Success</progress>
-          <progress value="70" max="100" class="progress progress-warning">Warning</progress>
-          <progress value="90" max="100" class="progress progress-error">Error</progress>
+          <progress value="25" max="100" class="progress progress-primary">
+            Primary
+          </progress>
+          <progress value="30" max="100" class="progress progress-secondary">
+            Secondary
+          </progress>
+          <progress value="40" max="100" class="progress progress-accent">
+            Accent
+          </progress>
+          <progress value="45" max="100" class="progress progress-info">
+            Info
+          </progress>
+          <progress value="55" max="100" class="progress progress-success">
+            Success
+          </progress>
+          <progress value="70" max="100" class="progress progress-warning">
+            Warning
+          </progress>
+          <progress value="90" max="100" class="progress progress-error">
+            Error
+          </progress>
         </div>
       </div>
       <div class="flex flex-col gap-3 md:flex-row">
@@ -145,9 +193,15 @@ const isDarkMode = computed(() => {
           </div>
         </div>
         <div class="flex flex-wrap items-center justify-center gap-3 md:w-1/2">
-          <div class="radial-progress" style="--value: 60; --size: 3.5rem">60%</div>
-          <div class="radial-progress" style="--value: 75; --size: 3.5rem">75%</div>
-          <div class="radial-progress" style="--value: 90; --size: 3.5rem">90%</div>
+          <div class="radial-progress" style="--value: 60; --size: 3.5rem">
+            60%
+          </div>
+          <div class="radial-progress" style="--value: 75; --size: 3.5rem">
+            75%
+          </div>
+          <div class="radial-progress" style="--value: 90; --size: 3.5rem">
+            90%
+          </div>
         </div>
       </div>
     </div>
@@ -175,14 +229,33 @@ const isDarkMode = computed(() => {
         </div>
         <div class="md:w-1/2">
           <input type="range" min="0" max="100" class="range range-xs" />
-          <input type="range" min="0" max="100" class="range range-xs range-primary" />
-          <input type="range" min="0" max="100" class="range range-xs range-secondary" />
-          <input type="range" min="0" max="100" class="range range-xs range-accent" />
+          <input
+            type="range"
+            min="0"
+            max="100"
+            class="range range-xs range-primary"
+          />
+          <input
+            type="range"
+            min="0"
+            max="100"
+            class="range range-xs range-secondary"
+          />
+          <input
+            type="range"
+            min="0"
+            max="100"
+            class="range range-xs range-accent"
+          />
         </div>
       </div>
       <div class="flex flex-col gap-3 md:flex-row">
         <div class="flex flex-col gap-3 md:w-1/2">
-          <input type="text" placeholder="Default" class="input input-bordered w-full" />
+          <input
+            type="text"
+            placeholder="Default"
+            class="input input-bordered w-full"
+          />
           <input
             type="text"
             placeholder="Primary"
@@ -200,7 +273,11 @@ const isDarkMode = computed(() => {
           />
         </div>
         <div class="flex flex-col gap-3 md:w-1/2">
-          <input type="text" placeholder="Info" class="input input-info input-bordered w-full" />
+          <input
+            type="text"
+            placeholder="Info"
+            class="input input-info input-bordered w-full"
+          />
           <input
             type="text"
             placeholder="Success"
@@ -211,7 +288,11 @@ const isDarkMode = computed(() => {
             placeholder="Warning"
             class="input input-warning input-bordered w-full"
           />
-          <input type="text" placeholder="Error" class="input input-error input-bordered w-full" />
+          <input
+            type="text"
+            placeholder="Error"
+            class="input input-error input-bordered w-full"
+          />
         </div>
       </div>
       <div class="navbar bg-neutral text-neutral-content rounded-box">
@@ -232,7 +313,9 @@ const isDarkMode = computed(() => {
             </svg>
           </button>
         </div>
-        <div class="flex-1"><button class="btn btn-ghost text-xl normal-case">daisyUI</button></div>
+        <div class="flex-1">
+          <button class="btn btn-ghost text-xl normal-case">daisyUI</button>
+        </div>
       </div>
       <div class="flex gap-3">
         <div class="flex flex-grow flex-col gap-3">

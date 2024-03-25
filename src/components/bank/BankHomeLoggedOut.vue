@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { CheckIcon, HomeIcon } from '@heroicons/vue/24/outline'
-import ButtonCard from '@/components/bank/ButtonCard.vue'
+import { CheckIcon, HomeIcon } from "@heroicons/vue/24/outline";
+import ButtonCard from "@/components/bank/ButtonCard.vue";
 </script>
 
 <template>
@@ -20,7 +20,9 @@ import ButtonCard from '@/components/bank/ButtonCard.vue'
               </p>
             </div>
           </div>
-          <div class="absolute flex w-full flex-col bottom-1/4 text-xs md:text-base">
+          <div
+            class="absolute flex w-full flex-col bottom-1/4 text-xs md:text-base"
+          >
             <div class="flex flex-col items-center mt-10">
               <div class="card bg-primary shadow-xl w-10/12">
                 <div class="card-body text-primary-content">
@@ -56,13 +58,23 @@ import ButtonCard from '@/components/bank/ButtonCard.vue'
       <div class="col-span-1 flex justify-center pt-4">
         <div class="flex flex-col">
           <div class="pb-4 text-center">
-            <h2 class="font-bold text-xl">Insurance, mortgage, loan, moving out...</h2>
+            <h2 class="font-bold text-xl">
+              Insurance, mortgage, loan, moving out...
+            </h2>
             <p>What do you need?</p>
           </div>
           <div class="grid grid-cols-1 gap-12 p-4 md:w-96">
-            <button-card title="Simulator" description="Mortgage Loan Simulator" icon="Home" />
+            <button-card
+              title="Simulator"
+              description="Mortgage Loan Simulator"
+              icon="Home"
+            />
 
-            <button-card title="Cards" description="Select your credit card" icon="CreditCard" />
+            <button-card
+              title="Cards"
+              description="Select your credit card"
+              icon="CreditCard"
+            />
 
             <button-card
               title="Simulator"

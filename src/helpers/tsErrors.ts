@@ -1,94 +1,106 @@
 export abstract class BaseSdkError extends Error implements SdkError {
-  errorCode = ErrorCode.NotInitialized
+  errorCode = ErrorCode.NotInitialized;
 
-  data?: any
+  data?: any;
 
   constructor(message?: string, additionalData?: any) {
-    super(message)
-    this.data = additionalData
+    super(message);
+    this.data = additionalData;
   }
 }
 
 export class NotInitializedError extends BaseSdkError {
-  errorCode = ErrorCode.NotInitialized
+  errorCode = ErrorCode.NotInitialized;
 
   constructor(message?: string, additionalData?: any) {
-    super(message ?? 'WebAuthnSdk is not initialized', additionalData)
+    super(message ?? "WebAuthnSdk is not initialized", additionalData);
   }
 }
 
 export class AuthenticationFailedError extends BaseSdkError {
-  errorCode = ErrorCode.AuthenticationFailed
+  errorCode = ErrorCode.AuthenticationFailed;
 
   constructor(message?: string, additionalData?: any) {
-    super(message ?? 'Authentication failed with an error', additionalData)
+    super(message ?? "Authentication failed with an error", additionalData);
   }
 }
 
 export class AuthenticationCanceledError extends BaseSdkError {
-  errorCode = ErrorCode.AuthenticationCanceled
+  errorCode = ErrorCode.AuthenticationCanceled;
 
   constructor(message?: string, additionalData?: any) {
-    super(message ?? 'Authentication was canceled by the user or got timeout', additionalData)
+    super(
+      message ?? "Authentication was canceled by the user or got timeout",
+      additionalData
+    );
   }
 }
 
 export class RegistrationFailedError extends BaseSdkError {
-  errorCode = ErrorCode.RegistrationFailed
+  errorCode = ErrorCode.RegistrationFailed;
 
   constructor(message?: string, additionalData?: any) {
-    super(message ?? 'Registration failed with an error', additionalData)
+    super(message ?? "Registration failed with an error", additionalData);
   }
 }
 
 export class RegistrationCanceledError extends BaseSdkError {
-  errorCode = ErrorCode.RegistrationCanceled
+  errorCode = ErrorCode.RegistrationCanceled;
 
   constructor(message?: string, additionalData?: any) {
-    super(message ?? 'Registration was canceled by the user or got timeout', additionalData)
+    super(
+      message ?? "Registration was canceled by the user or got timeout",
+      additionalData
+    );
   }
 }
 
 export class AutofillAuthenticationAbortedError extends BaseSdkError {
-  errorCode = ErrorCode.AutofillAuthenticationAborted
+  errorCode = ErrorCode.AutofillAuthenticationAborted;
 
   constructor(message?: string) {
-    super(message ?? 'Autofill flow was aborted')
+    super(message ?? "Autofill flow was aborted");
   }
 }
 
 export class AuthenticationProcessAlreadyActiveError extends BaseSdkError {
-  errorCode = ErrorCode.AuthenticationProcessAlreadyActive
+  errorCode = ErrorCode.AuthenticationProcessAlreadyActive;
 
   constructor(message?: string, additionalData?: any) {
-    super(message ?? 'Authentication process is already active', additionalData)
+    super(
+      message ?? "Authentication process is already active",
+      additionalData
+    );
   }
 }
 
 export class InvalidApprovalDataError extends BaseSdkError {
-  errorCode = ErrorCode.InvalidApprovalData
+  errorCode = ErrorCode.InvalidApprovalData;
 
   constructor(message?: string, additionalData?: any) {
-    super(message ?? 'Invalid approval data', additionalData)
+    super(message ?? "Invalid approval data", additionalData);
   }
 }
 
 export class FailedToInitCrossDeviceAuthenticationError extends BaseSdkError {
-  errorCode = ErrorCode.FailedToInitCrossDeviceSession
+  errorCode = ErrorCode.FailedToInitCrossDeviceSession;
 
   constructor(message?: string, additionalData?: any) {
-    super(message ?? 'Failed to init cross device authentication', additionalData)
+    super(
+      message ?? "Failed to init cross device authentication",
+      additionalData
+    );
   }
 }
 
 export class FailedToGetCrossDeviceStatusError extends BaseSdkError {
-  errorCode = ErrorCode.FailedToGetCrossDeviceStatus
+  errorCode = ErrorCode.FailedToGetCrossDeviceStatus;
 
   constructor(message?: string, additionalData?: any) {
-    super(message ?? 'Failed to get cross device status', additionalData)
+    super(message ?? "Failed to get cross device status", additionalData);
   }
 }
 
 export function isBaseSdkError(error: any): error is BaseSdkError {
-  return error.errorCode && Object.values(ErrorCode).includes(error.errorCode)
+  return error.errorCode && Object.values(ErrorCode).includes(error.errorCode);
 }

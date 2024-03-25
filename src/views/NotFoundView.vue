@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import NotFoundPage from '@/components/NotFoundPage.vue'
-import FooterSection from '@/components/FooterSection.vue'
+import NotFoundPage from "@/components/NotFoundPage.vue";
+import FooterSection from "@/components/FooterSection.vue";
 </script>
 <template>
   <not-found-page>
-    {{ $t('global.pageNotFound') }}
+    {{ $t("global.pageNotFound") }}
   </not-found-page>
   <footer-section />
 </template>

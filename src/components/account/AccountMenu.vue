@@ -5,22 +5,30 @@
  *
  * Lists the different sub menus the user can access
  */
-import { UserCircleIcon, Cog8ToothIcon } from '@heroicons/vue/24/outline'
+import { UserCircleIcon, Cog8ToothIcon } from "@heroicons/vue/24/outline";
 
-import AccountMenuButton from '@/components/account/AccountMenuButton.vue'
-import { useRoute } from 'vue-router'
-import { useI18n } from 'vue-i18n'
-import { ref } from 'vue'
+import AccountMenuButton from "@/components/account/AccountMenuButton.vue";
+import { useRoute } from "vue-router";
+import { useI18n } from "vue-i18n";
+import { ref } from "vue";
 
-const { t } = useI18n()
-const route = useRoute()
+const { t } = useI18n();
+const route = useRoute();
 const menuRoutes = ref([
-  { title: t('menu.profile'), icon: UserCircleIcon, routeName: 'accountProfile' },
-  { title: t('menu.account'), icon: Cog8ToothIcon, routeName: 'accountSettings' },
-])
+  {
+    title: t("menu.profile"),
+    icon: UserCircleIcon,
+    routeName: "accountProfile",
+  },
+  {
+    title: t("menu.account"),
+    icon: Cog8ToothIcon,
+    routeName: "accountSettings",
+  },
+]);
 
 function accountRouteSelected(routeName: string) {
-  return route.name === routeName
+  return route.name === routeName;
 }
 </script>
 <template>

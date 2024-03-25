@@ -2,34 +2,35 @@
 /**
  * Link to a sub menu, used in the AccountMenu component
  */
-import { computed, toRefs } from 'vue'
-import type { FunctionalComponent, HTMLAttributes, VNodeProps } from 'vue'
+import { computed, toRefs } from "vue";
+import type { FunctionalComponent, HTMLAttributes, VNodeProps } from "vue";
 
 const props = withDefaults(
   defineProps<{
-    title: string
-    icon: FunctionalComponent<HTMLAttributes & VNodeProps, {}, any>
-    routeName: string
-    selected?: boolean
+    title: string;
+    icon: FunctionalComponent<HTMLAttributes & VNodeProps, {}, any>;
+    routeName: string;
+    selected?: boolean;
   }>(),
-  { selected: false },
-)
+  { selected: false }
+);
 
-const { title, icon, selected, routeName } = toRefs(props)
+const { title, icon, selected, routeName } = toRefs(props);
 
 const selectedLinkClass =
-  'bg-primary/5 border-primary-focus text-primary hover:bg-primary/10 hover:text-primary-focus'
-const normalLinkClass = 'text-base-content/50 hover:bg-base-200 hover:text-base-content/70'
-const selectedIconClass = 'group-hover:text-primary-focus'
-const normalIconClass = 'text-base-content/50 group-hover:text-base-content/70'
+  "bg-primary/5 border-primary-focus text-primary hover:bg-primary/10 hover:text-primary-focus";
+const normalLinkClass =
+  "text-base-content/50 hover:bg-base-200 hover:text-base-content/70";
+const selectedIconClass = "group-hover:text-primary-focus";
+const normalIconClass = "text-base-content/50 group-hover:text-base-content/70";
 
 const linkClass = computed(() => {
-  return selected.value ? selectedLinkClass : normalLinkClass
-})
+  return selected.value ? selectedLinkClass : normalLinkClass;
+});
 
 const iconClass = computed(() => {
-  return selected.value ? selectedIconClass : normalIconClass
-})
+  return selected.value ? selectedIconClass : normalIconClass;
+});
 </script>
 <template>
   <router-link

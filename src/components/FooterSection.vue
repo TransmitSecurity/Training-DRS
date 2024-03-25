@@ -1,17 +1,20 @@
 <script setup lang="ts">
-import LogoOnPrimary from '@/components/logo/LogoOnPrimary.vue'
+import LogoOnPrimary from "@/components/logo/LogoOnPrimary.vue";
 </script>
 <template>
   <footer class="bg-primary text-primary-content">
-    <div class="container px-6 py-8 mx-auto space-y-8 md:space-y-0 md:flex md:justify-between">
+    <div
+      class="container px-6 py-8 mx-auto space-y-8 md:space-y-0 md:flex md:justify-between"
+    >
       <div>
         <a class="flex flex-start" href="#">
           <logo-on-primary />
         </a>
 
         <p class="max-w-lg mt-6 leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt voluptatum amet
-          molestiae consequatur quam velit sint modi aut illo dolorem.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+          voluptatum amet molestiae consequatur quam velit sint modi aut illo
+          dolorem.
         </p>
       </div>
 
@@ -124,7 +127,9 @@ import LogoOnPrimary from '@/components/logo/LogoOnPrimary.vue'
       </div>
     </div>
 
-    <p class="w-full py-6 mx-auto text-primary-content text-center bg-primary-focus">
+    <p
+      class="w-full py-6 mx-auto text-primary-content text-center bg-primary-focus"
+    >
       &copy; 2023 Acme. All rights reserved.
     </p>
   </footer>

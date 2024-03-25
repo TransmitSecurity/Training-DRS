@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Logo from './acme/AcmePrimaryColor.vue'
+import Logo from "./acme/AcmePrimaryColor.vue";
 </script>
 <template>
   <logo />

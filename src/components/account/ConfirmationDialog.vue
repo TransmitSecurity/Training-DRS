@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toRefs } from 'vue'
+import { toRefs } from "vue";
 import {
   TransitionRoot,
   TransitionChild,
@@ -7,14 +7,14 @@ import {
   DialogPanel,
   DialogTitle,
   DialogDescription,
-} from '@headlessui/vue'
+} from "@headlessui/vue";
 
 const props = defineProps<{
-  isOpen: boolean
-}>()
+  isOpen: boolean;
+}>();
 
-const { isOpen } = toRefs(props)
-const emits = defineEmits(['cancel', 'confirm'])
+const { isOpen } = toRefs(props);
+const emits = defineEmits(["cancel", "confirm"]);
 </script>
 <template>
   <TransitionRoot appear :show="isOpen" as="template">
@@ -32,7 +32,9 @@ const emits = defineEmits(['cancel', 'confirm'])
       </TransitionChild>
 
       <div class="fixed inset-0 overflow-y-auto">
-        <div class="flex min-h-full items-center justify-center p-4 text-center">
+        <div
+          class="flex min-h-full items-center justify-center p-4 text-center"
+        >
           <TransitionChild
             as="template"
             enter="duration-300 ease-out"
@@ -45,16 +47,21 @@ const emits = defineEmits(['cancel', 'confirm'])
             <DialogPanel
               class="w-full max-w-md transform overflow-hidden rounded-box bg-base-100 text-base-content p-6 text-left align-middle shadow-xl transition-all"
             >
-              <DialogTitle class="mb-8">{{ $t('global.areYouSure') }}</DialogTitle>
+              <DialogTitle class="mb-8">{{
+                $t("global.areYouSure")
+              }}</DialogTitle>
               <DialogDescription>
                 <slot> This operation cannot be undone. </slot>
               </DialogDescription>
               <div class="flex justify-around mt-8">
-                <button class="btn btn-ghost border-primary border-2" @click="$emit('cancel')">
-                  {{ $t('global.cancel') }}
+                <button
+                  class="btn btn-ghost border-primary border-2"
+                  @click="$emit('cancel')"
+                >
+                  {{ $t("global.cancel") }}
                 </button>
                 <button class="btn btn-primary" @click="$emit('confirm')">
-                  {{ $t('global.confirm') }}
+                  {{ $t("global.confirm") }}
                 </button>
               </div>
             </DialogPanel>

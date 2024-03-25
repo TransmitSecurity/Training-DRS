@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import { toRefs } from 'vue'
+import { toRefs } from "vue";
 
-import { CheckIcon } from '@heroicons/vue/24/outline'
-import { ExclamationCircleIcon } from '@heroicons/vue/24/solid'
+import { CheckIcon } from "@heroicons/vue/24/outline";
+import { ExclamationCircleIcon } from "@heroicons/vue/24/solid";
 const props = withDefaults(
   defineProps<{
-    label: string
-    data: string
-    verified?: boolean
-    verifyRouteName: string
+    label: string;
+    data: string;
+    verified?: boolean;
+    verifyRouteName: string;
   }>(),
-  { verified: false },
-)
+  { verified: false }
+);
 
-const { label, data, verified } = toRefs(props)
+const { label, data, verified } = toRefs(props);
 </script>
 
 <template>
@@ -22,7 +22,7 @@ const { label, data, verified } = toRefs(props)
       <span class="label-text text-xs text-base-content">{{ label }}</span>
       <div v-if="verified" class="badge badge-info bg-info/20 text-xs gap-2">
         <CheckIcon class="h-4 w-4 text-info-content" />
-        {{ $t('userData.verified') }}
+        {{ $t("userData.verified") }}
       </div>
       <router-link
         :to="{ name: verifyRouteName }"
@@ -30,9 +30,14 @@ const { label, data, verified } = toRefs(props)
         class="text-warning pr-1 text-xs flex items-center w-max underline"
       >
         <ExclamationCircleIcon class="h-4 w-4 text-warning/70" />
-        <span>{{ $t('userData.notVerified') }}</span>
+        <span>{{ $t("userData.notVerified") }}</span>
       </router-link>
     </label>
-    <input type="text" disabled class="input input-bordered w-full" :value="data" />
+    <input
+      type="text"
+      disabled
+      class="input input-bordered w-full"
+      :value="data"
+    />
   </div>
 </template>

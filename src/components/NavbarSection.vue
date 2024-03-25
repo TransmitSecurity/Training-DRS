@@ -1,14 +1,18 @@
 <script setup lang="ts">
-import { MagnifyingGlassIcon, BellIcon, ArrowLeftOnRectangleIcon } from '@heroicons/vue/24/outline'
-import { UserCircleIcon } from '@heroicons/vue/24/solid'
-import { userSessionStore } from '@/store/userSession'
-import { logout } from '@/helpers/session'
-import LogoOnBase from './logo/LogoOnBase.vue'
-import { storeToRefs } from 'pinia'
+import {
+  MagnifyingGlassIcon,
+  BellIcon,
+  ArrowLeftOnRectangleIcon,
+} from "@heroicons/vue/24/outline";
+import { UserCircleIcon } from "@heroicons/vue/24/solid";
+import { userSessionStore } from "@/store/userSession";
+import { logout } from "@/helpers/session";
+import LogoOnBase from "./logo/LogoOnBase.vue";
+import { storeToRefs } from "pinia";
 
-const userSession = userSessionStore()
-const userSessionRefs = storeToRefs(userSession)
-const { fullName } = userSessionRefs
+const userSession = userSessionStore();
+const userSessionRefs = storeToRefs(userSession);
+const { fullName } = userSessionRefs;
 </script>
 <template>
   <div class="navbar bg-base-200 text-base-content">
@@ -36,7 +40,9 @@ const { fullName } = userSessionRefs
 
       <!-- Login button or profile dropdown -->
       <div v-if="!userSession.isAuthenticated" class="pr-4">
-        <router-link :to="{ name: 'login' }">{{ $t('authentication.login') }}</router-link>
+        <router-link :to="{ name: 'login' }">{{
+          $t("authentication.login")
+        }}</router-link>
       </div>
       <div class="dropdown dropdown-end min-w-max" v-else>
         <label tabindex="0" class="btn btn-ghost btn-circle avatar">
@@ -50,14 +56,17 @@ const { fullName } = userSessionRefs
             {{ fullName }}
           </li>
           <li>
-            <router-link :to="{ name: 'accountProfile' }" class="justify-between pr-24">
-              {{ $t('menu.profile') }}
+            <router-link
+              :to="{ name: 'accountProfile' }"
+              class="justify-between pr-24"
+            >
+              {{ $t("menu.profile") }}
             </router-link>
           </li>
           <li>
             <a @click="logout"
               ><arrow-left-on-rectangle-icon class="w-4 h-4" />
-              <span>{{ $t('authentication.logout') }}</span>
+              <span>{{ $t("authentication.logout") }}</span>
             </a>
           </li>
         </ul>

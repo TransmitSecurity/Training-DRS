@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import BankHomeLoggedIn from '@/components/bank/BankHomeLoggedIn.vue'
-import BankHomeLoggedOut from '@/components/bank/BankHomeLoggedOut.vue'
-import { userSessionStore } from '@/store/userSession'
+import BankHomeLoggedIn from "@/components/bank/BankHomeLoggedIn.vue";
+import BankHomeLoggedOut from "@/components/bank/BankHomeLoggedOut.vue";
+import { userSessionStore } from "@/store/userSession";
 
-import { storeToRefs } from 'pinia'
-import FooterSection from '@/components/FooterSection.vue'
+import { storeToRefs } from "pinia";
+import FooterSection from "@/components/FooterSection.vue";
 
-const userSession = userSessionStore()
-const userSessionRefs = storeToRefs(userSession)
+const userSession = userSessionStore();
+const userSessionRefs = storeToRefs(userSession);
 </script>
 
 <template>

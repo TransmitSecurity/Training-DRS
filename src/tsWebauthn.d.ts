@@ -2,50 +2,50 @@
  * WebAuthn registration response interfaces
  */
 interface ApiStartRegistrationResponse {
-  webauthn_session_id: string
-  credential_creation_options: any
+  webauthn_session_id: string;
+  credential_creation_options: any;
 }
 
 /**
  * WebAuthn authentication response interfaces
  */
 interface ApiStartAuthenticationResponse {
-  webauthn_session_id: string
-  credential_request_options: any
+  webauthn_session_id: string;
+  credential_request_options: any;
 }
 
 enum AuthenticationMediationType {
-  InputAutofill = 'input-autofill',
-  Modal = 'modal',
+  InputAutofill = "input-autofill",
+  Modal = "modal",
 }
 /**
  * WebAuthn cross device interfaces
  */
 enum WebauthnCrossDeviceStatus {
-  Pending = 'pending',
-  Scanned = 'scanned',
-  Success = 'success',
-  Error = 'error',
-  Timeout = 'timeout',
-  Aborted = 'aborted',
+  Pending = "pending",
+  Scanned = "scanned",
+  Success = "success",
+  Error = "error",
+  Timeout = "timeout",
+  Aborted = "aborted",
 }
 
 interface CrossDeviceController {
   /**
    * Ticket ID for this cross-device flow.
    */
-  crossDeviceTicketId: string
+  crossDeviceTicketId: string;
   /**
    * Stops listening for events from devices in cross-device flows
    */
-  stop: () => void
+  stop: () => void;
 }
 
 /**
  * WebAuthn cross device init response interfaces
  */
 interface ApiCrossDeviceInitResponse {
-  cross_device_ticket_id: string
+  cross_device_ticket_id: string;
 }
 
 /**
@@ -55,12 +55,12 @@ interface ApiCrossDeviceStatusResponse {
   /**
    * cross device status
    */
-  status: WebauthnCrossDeviceStatus
+  status: WebauthnCrossDeviceStatus;
 
   /**
    * authentication session id
    */
-  session_id?: string
+  session_id?: string;
 }
 
 interface AutofillHandlers {
@@ -72,12 +72,15 @@ interface AutofillHandlers {
    * @param handlers Handlers that will be invoked once the authentication is completed (success or failure)
    * @param username Name of user account, as used in the WebAuthn registration. If not provided, the authentication will start without the context of a user and it will be inferred by the chosen passkey
    */
-  activate(handlers: AuthenticationAutofillActivateHandlers, username?: string): void
+  activate(
+    handlers: AuthenticationAutofillActivateHandlers,
+    username?: string
+  ): void;
 
   /**
    * Aborts a WebAuthn authentication. This method should be called after the passkey autofill is dismissed in order to be able to query existing passkeys once again. This will end the browser's  `navigator.credentials.get()` operation.
    */
-  abort(): void
+  abort(): void;
 }
 /**
  * Alternate paths used by the SDK to route API calls to your proxy server.
@@ -86,37 +89,37 @@ interface WebauthnApis {
   /**
    * @defaultValue `/v1/auth/webauthn/authenticate/start`
    */
-  startAuthentication: string
+  startAuthentication: string;
 
   /**
    * @defaultValue `/v1/auth/webauthn/register/start`
    */
-  startRegistration: string
+  startRegistration: string;
 
   /**
    * @defaultValue `/v1/auth/webauthn/cross-device/register/start`
    */
-  startCrossDeviceRegistration: string
+  startCrossDeviceRegistration: string;
 
   /**
    * @defaultValue `/v1/auth/webauthn/cross-device/authenticate/init`
    */
-  initCrossDeviceAuthentication: string
+  initCrossDeviceAuthentication: string;
 
   /**
    * @defaultValue `/v1/auth/webauthn/cross-device/authenticate/start`
    */
-  startCrossDeviceAuthentication: string
+  startCrossDeviceAuthentication: string;
 
   /**
    * @defaultValue `/v1/auth/webauthn/cross-device/status`
    */
-  getCrossDeviceTicketStatus: string
+  getCrossDeviceTicketStatus: string;
 
   /**
    * @defaultValue `/v1/auth/webauthn/cross-device/attach-device`
    */
-  attachDeviceToCrossDeviceSession: string
+  attachDeviceToCrossDeviceSession: string;
 }
 
 /**
@@ -127,42 +130,42 @@ interface WebAuthnInitOptions {
    * Base path for sending API requests. This would be either a Transmit Security API deployment URL
    * such as documented for sandbox, or if you are proxying API requests from your backend - then the base path to your proxy.
    */
-  serverPath: string
+  serverPath: string;
 
   /**
    * Override endpoints when using a proxy server in case the proxy server implements its own paths.
    */
-  webauthnApiPaths?: WebauthnApis
+  webauthnApiPaths?: WebauthnApis;
 }
 
 /**
  * @private
  */
 interface PublicKeyCredentialRegistrationData {
-  id: string
-  rawId: string
+  id: string;
+  rawId: string;
   response: {
-    attestationObject: string
-    clientDataJSON: string
-  }
-  authenticatorAttachment: string | null
-  type: string
+    attestationObject: string;
+    clientDataJSON: string;
+  };
+  authenticatorAttachment: string | null;
+  type: string;
 }
 
 /**
  * @private
  */
 interface PublicKeyCredentialAuthenticationData {
-  id: string
-  rawId: string
+  id: string;
+  rawId: string;
   response: {
-    authenticatorData: string
-    clientDataJSON: string
-    signature: string
-    userHandle: string
-  }
-  authenticatorAttachment?: string | null
-  type: string
+    authenticatorData: string;
+    clientDataJSON: string;
+    signature: string;
+    userHandle: string;
+  };
+  authenticatorAttachment?: string | null;
+  type: string;
 }
 
 /**
@@ -172,15 +175,17 @@ interface CredentialResult {
   /**
    * The session ID of the operation
    */
-  webauthnSessionId: string
+  webauthnSessionId: string;
   /**
    * The encoded result of webauthn operation
    */
-  publicKeyCredential: PublicKeyCredentialRegistrationData | PublicKeyCredentialAuthenticationData
+  publicKeyCredential:
+    | PublicKeyCredentialRegistrationData
+    | PublicKeyCredentialAuthenticationData;
   /**
    * The user agent of the browser
    */
-  userAgent: string
+  userAgent: string;
 }
 
 interface AuthenticationAutofillActivateHandlers {
@@ -188,23 +193,23 @@ interface AuthenticationAutofillActivateHandlers {
    * A Callback function that will be triggered once biometrics signing is completed successfully.
    * @param webauthn_encoded_result
    */
-  onSuccess: (webauthn_encoded_result: string) => Promise<void>
+  onSuccess: (webauthn_encoded_result: string) => Promise<void>;
   /**
    * A Callback function that will be triggered if authentication fails with an SdkError.
    * @param err
    */
-  onError?: (err: SdkError) => Promise<void>
+  onError?: (err: SdkError) => Promise<void>;
 }
 
 interface BaseCrossDeviceHandlers {
   /**
    * Called when the user has successfully attached a device to the cross-device flow using the {@link WebauthnCrossDeviceFlows.attachDevice} method.
    */
-  onDeviceAttach: () => Promise<void>
+  onDeviceAttach: () => Promise<void>;
   /**
    * Called when there was an error in the cross-device flow with status response {@link ApiCrossDeviceStatusResponse}.
    */
-  onFailure: (error: ApiCrossDeviceStatusResponse) => Promise<void>
+  onFailure: (error: ApiCrossDeviceStatusResponse) => Promise<void>;
 }
 
 interface CrossDeviceAuthenticationHandlers extends BaseCrossDeviceHandlers {
@@ -212,14 +217,14 @@ interface CrossDeviceAuthenticationHandlers extends BaseCrossDeviceHandlers {
    * Called upon successful webauthn authentication.
    * @param sessionId Session ID that will be exchanged for the user's access and ID tokens using the /v1/auth/session/authenticate API
    */
-  onCredentialAuthenticate: (sessionId: string) => Promise<void>
+  onCredentialAuthenticate: (sessionId: string) => Promise<void>;
 }
 
 interface CrossDeviceRegistrationHandlers extends BaseCrossDeviceHandlers {
   /**
    * Called upon successful webauthn registration.
    */
-  onCredentialRegister: () => Promise<void>
+  onCredentialRegister: () => Promise<void>;
 }
 
 interface WebauthnAuthenticationFlows {
@@ -235,12 +240,12 @@ interface WebauthnAuthenticationFlows {
        * @throws {@link ErrorCode.AuthenticationProcessAlreadyActive}
        * @returns Base64-encoded object, which contains the credential result. This encoded result will be used to fetch user tokens via the [backend authentication endpoint](/openapi/user/backend-webauthn/#operation/authenticateWebauthnCredential).
        */
-  modal(username?: string): Promise<string>
+  modal(username?: string): Promise<string>;
 
   /**
    * Property used to implement credential selection via autofill UI.
    */
-  autofill: AutofillHandlers
+  autofill: AutofillHandlers;
 }
 
 interface WebauthnCrossDeviceFlows {
@@ -258,9 +263,9 @@ interface WebauthnCrossDeviceFlows {
      * @returns {@link CrossDeviceController} - Object that allows you to stop the event loop, and obtain the cross-device ticket ID.
      */
     registration: (params: {
-      crossDeviceTicketId: string
-      handlers: CrossDeviceRegistrationHandlers
-    }) => Promise<CrossDeviceController>
+      crossDeviceTicketId: string;
+      handlers: CrossDeviceRegistrationHandlers;
+    }) => Promise<CrossDeviceController>;
     /**
      * Start a cross device authentication flow
      * This call receives an optional username (if already known), and a {@link CrossDeviceAuthenticationHandlers} instance that contains your handlers for cross device events.
@@ -272,10 +277,10 @@ interface WebauthnCrossDeviceFlows {
      * @returns {@link CrossDeviceController} - Object that allows you to stop the event loop, and obtain the cross-device ticket ID.
      */
     authentication: (params: {
-      username?: string
-      handlers: CrossDeviceAuthenticationHandlers
-    }) => Promise<CrossDeviceController>
-  }
+      username?: string;
+      handlers: CrossDeviceAuthenticationHandlers;
+    }) => Promise<CrossDeviceController>;
+  };
 
   authenticate: {
     /**
@@ -288,8 +293,8 @@ interface WebauthnCrossDeviceFlows {
      * @throws {@link ErrorCode.AuthenticationCanceled}
      * @returns Base64-encoded object, which contains the credential result. This encoded result will be used to fetch user tokens via the [backend authentication endpoint](/openapi/user/backend-webauthn/#operation/authenticateWebauthnCredential).
      */
-    modal: (crossDeviceTicketId: string) => Promise<string>
-  }
+    modal: (crossDeviceTicketId: string) => Promise<string>;
+  };
   /**
    * Invokes a WebAuthn credential registration for the user used in the cross device session init, including prompting the user for biometrics.
    * If registration is completed successfully, this call will return a promise that resolves to the credential result, which is an object encoded as a base64 string. This encoded result should then be passed to the relevant backend registration endpoint to complete the registration for either a [logged-in user](/openapi/user/backend-webauthn/#operation/webauthn-registration) or [logged-out user](/openapi/user/backend-webauthn/#operation/webauthn-registration-external).
@@ -303,8 +308,8 @@ interface WebauthnCrossDeviceFlows {
    */
   register: (
     crossDeviceTicketId: string,
-    options?: WebauthnCrossDeviceRegistrationOptions,
-  ) => Promise<string>
+    options?: WebauthnCrossDeviceRegistrationOptions
+  ) => Promise<string>;
 
   /**
    * Indicates when a session is accepted on another device in cross-device flows.
@@ -312,24 +317,25 @@ interface WebauthnCrossDeviceFlows {
    * If successful,{@link CrossDeviceRegistrationHandlers.onDeviceAttach} will be called in registration flow and {@link CrossDeviceAuthenticationHandlers.onDeviceAttach} for authentication.
    * @param crossDeviceTicketId Ticket ID of the cross-device flow. retrieved from the {@link CrossDeviceController} object.
    */
-  attachDevice: (crossDeviceTicketId: string) => Promise<void>
+  attachDevice: (crossDeviceTicketId: string) => Promise<void>;
 }
 
 interface WebauthnCrossDeviceRegistrationOptions {
   /**
    * Allow registration using cross-platform authenticators, such as a USB security key or a different device. If enabled, cross-device authentication flows can be performed using the native browser experience (via QR code). default: True
    */
-  allowCrossPlatformAuthenticators?: boolean
+  allowCrossPlatformAuthenticators?: boolean;
 
   /**
    * Must be set to true to register credentials as passkeys when supported (except for Apple devices, which always register credentials as passkeys). default: True
    */
-  registerAsDiscoverable?: boolean
+  registerAsDiscoverable?: boolean;
 }
 
-interface WebauthnRegistrationOptions extends WebauthnCrossDeviceRegistrationOptions {
+interface WebauthnRegistrationOptions
+  extends WebauthnCrossDeviceRegistrationOptions {
   /**
    * Human-palatable name for the user account, only for display (max 64 characters). If not set, the username parameter will also act as the display name
    */
-  displayName?: string
+  displayName?: string;
 }
