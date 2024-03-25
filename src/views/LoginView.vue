@@ -250,6 +250,7 @@ const errorMessage = computed(() => {
 
           <div class="flex flex-col gap-y-1">
             <button
+              id="passwordLoginSubmit"
               type="submit"
               class="btn btn-block btn-primary"
               :class="loading ? 'loading loading-spinner btn-disabled' : ''"
