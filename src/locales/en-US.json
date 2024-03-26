@@ -65,7 +65,8 @@
     "passwordUpdated": "Password updated",
     "invalidPassword": "Invalid password",
     "forgotPassword": "I forgot my password",
-    "passwordsMatch": "Passwords match"
+    "passwordsMatch": "Passwords match",
+    "repeatYourPassword": "Repeat your password"
   },
   "otp": {
     "pleaseEnterTheCodeReceived": "Please enter the code sent to",
@@ -124,7 +125,8 @@
   "registration": {
     "createYourAccount": "Create your account",
     "createAccount": "Create account",
-    "billingInformation": "Billing information"
+    "billingInformation": "Billing information",
+    "weAreCreatingYourAccount": "We are creating your account"
   },
   "account": {
     "profile": {
@@ -532,9 +534,13 @@
         "content1": "Passkeys offer the convenience of fast and easy authentication, and provides a security stronger than a password combined with an SMS code.",
         "content2": "Even better, with passkeys, no application is required.",
         "learnMore": "Learn more about passkeys"
-      }
+      },
+      "iban": "IBAN"
     },
     "addABeneficiary": "Add a beneficiary",
-    "amount": "Amount"
+    "amount": "Amount",
+    "manageCards": "Manage cards",
+    "accessDocuments": "Access documents",
+    "jointAccountSecondPersonFullName": "Camille Dupont"
   }
 }
