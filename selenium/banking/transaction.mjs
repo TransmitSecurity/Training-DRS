@@ -1,7 +1,7 @@
 import { Builder, By, Browser, until } from "selenium-webdriver";
 
-const email = "erwan.dano@transmitsecurity.com";
-const password = "mlkjmlkj";
+const email = "my.address@mail.com";
+const password = "secret";
 
 async function loginAction() {
   let driver = await new Builder().forBrowser(Browser.CHROME).build();
