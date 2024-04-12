@@ -70,12 +70,14 @@ onMounted(() => {
 
 async function checkWebauthnSupport() {
   console.log("Verifying if webauthn is supported");
-  window.tsPlatform.webauthn
+  //https://developer.transmitsecurity.com/guides/webauthn/quick_start_sdk#1-check-for-webauthn-support
+  //Action: Check if webauthn is supported if it is set the session variable.
+  /*window.tsPlatform.webauthn
     .isPlatformAuthenticatorSupported()
     .then((supported: boolean) => {
       userSession.setWebAuthnSupported(supported);
       console.log(`Webauthn is ${supported ? "" : "not"} supported`);
-    });
+    });*/
 }
 
 async function continueSignup() {

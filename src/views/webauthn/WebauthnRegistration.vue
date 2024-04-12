@@ -56,14 +56,18 @@ onBeforeMount(async () => {
 
 async function registerWebauthn() {
   try {
-    const webauthnEncodedResult = await window.tsPlatform.webauthn.register(
+    //https://developer.transmitsecurity.com/guides/webauthn/quick_start_sdk#2-register-credential-on-device
+    //ACTION: start creating the credentials, you should use the method register():
+    /*const webauthnEncodedResult = await window.tsPlatform.webauthn.register(
       userSession.email
-    );
-    // WEBINAR ACTION - Report the account authentication update action
-    /* reportAction(Action.ACCOUNT_AUTH_CHANGE) */
-    const response = await registerApi.registerWebauthn({
+    );*/
+
+    reportAction(Action.ACCOUNT_AUTH_CHANGE)
+    //https://developer.transmitsecurity.com/guides/webauthn/quick_start_sdk#3-complete-registration
+    //ACTION: Finish credential registration.
+    /*const response = await registerApi.registerWebauthn({
       webauthnEncodedResult,
-    });
+    });*/
     loading.value = false;
     console.log(response);
     if (response.status == 200) {

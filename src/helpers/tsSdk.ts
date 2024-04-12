@@ -19,10 +19,11 @@ export function initWhenLoaded() {
         if (response.status == 200) {
           console.log('TSPlatform -- Starting init')
           // https://developer.transmitsecurity.com/guides/risk/quick_start_web/#step-2-load-sdk
-          await window.tsPlatform.initialize({
+          // Action: Initialize the SDK.
+         /* await window.tsPlatform.initialize({
             clientId: response.data.clientId,
             webauthn: { serverPath: import.meta.env.VITE_TS_SERVER_PATH },
-          })
+          })*/
           console.log('TSPlatform -- End init')
           // Dispatch an event indicating that the SDK was initialized
           // this is helpful whenever webauthn authentication needs to be used
