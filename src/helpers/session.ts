@@ -14,7 +14,7 @@ export async function logout() {
     return;
   }
   // WEBINAR ACTION - Report the logout action
-  /* reportAction(Action.LOGOUT); */
+  reportAction(Action.LOGOUT);
   clearSession();
   const userApi = new UserApi(undefined, backendAPI);
   // Dispatch an event other components can subscribe to
@@ -45,14 +45,12 @@ export async function loadSession(): Promise<{ user: UserDto } | undefined> {
 
       // WEBINAR ACTION - Report a login action
       // Report a login action to the detection and response service
-      /*
-       * const actionToken = await reportAction(Action.LOGIN)
-       * console.log('Action token', actionToken)
-       */
+       const actionToken = await reportAction(Action.LOGIN)
+       console.log('Action token', actionToken)
 
       // WEBINAR ACTION - Send the action token to the backend when getting the user data
       // Retrieve the current user (if there is one)
-      const userResponse = await userApi.getCurrentUser();
+      const userResponse = await userApi.getCurrentUser(actionToken);
 
       console.log(userResponse.data.userData);
       console.log("riskRecommendation", userResponse.data.riskRecommendation);
@@ -64,7 +62,7 @@ export async function loadSession(): Promise<{ user: UserDto } | undefined> {
 
       // WEBINAR ACTION 2 - Set the user ID
       // The user is authenticated, set the user in the risk SDK
-      /* setUserId(userResponse.data.userData.user_id); */
+       setUserId(userResponse.data.userData.user_id);
 
       // Save the user information locally
       sessionStore.setUserData(userResponse.data.userData);

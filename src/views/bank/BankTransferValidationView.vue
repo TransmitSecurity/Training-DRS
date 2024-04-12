@@ -20,7 +20,7 @@ const amount = computed(() => {
 
 function validateTransfer() {
   // WEBINAR ACTION - Report the transaction action
-  /* reportAction(Action.TRANSACTION) */
+   reportAction(Action.TRANSACTION)
   router.push({ name: "home" });
 }
 </script>

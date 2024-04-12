@@ -96,7 +96,7 @@ async function signupPassword() {
     loading.value = true;
     try {
       // WEBINAR ACTION - Report the registration action
-      /* reportAction(Action.REGISTER) */
+       reportAction(Action.REGISTER)
       const response = await registerApi.registerWithPassword({
         email: email.value,
         password: password.value,
