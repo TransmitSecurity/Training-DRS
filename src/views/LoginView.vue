@@ -89,8 +89,7 @@ async function loginPassword() {
     // Authenticate with a password
     loading.value = true;
     try {
-      // WEBINAR ACTION - Report the login action
-       reportAction(Action.LOGIN)
+      reportAction(Action.LOGIN)
       const response = await authApi.authenticatePassword({
         email: email.value,
         password: password.value,
@@ -118,14 +117,17 @@ async function loginWebauthn() {
     await window.tsPlatform.webauthn.authenticate.autofill.abort();
     // Proceed to traditional login
     reportAction(Action.LOGIN);
+
     //https://developer.transmitsecurity.com/guides/webauthn/quick_start_sdk#step-5-authenticate-user
     //ACTION: Authenticate using WebAuth
+
     /*const webauthnEncodedResult =
       await window.tsPlatform.webauthn.authenticate.modal(email.value);*/
-    //Exchange for an access token.
-    const response = await authApi.authenticateWebauthn({
+
+    //ACTION: Exchange for an access token.
+    /*const response = await authApi.authenticateWebauthn({
       webauthnEncodedResult,
-    });
+    });*/
     console.log(response);
     console.log(response.data);
     await loadSession();
