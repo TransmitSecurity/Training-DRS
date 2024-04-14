@@ -141,9 +141,8 @@ async function loginWebauthn() {
 
 async function loginWebauthnAutofill(webauthnEncodedResult: string) {
   try {
-    // WEBINAR ACTION - Report the login action
-    const respon     reportAction(Action.LOGIN);
-    se = await authApi.authenticateWebauthn({
+    reportAction(Action.LOGIN);
+    const response = await authApi.authenticateWebauthn({
       webauthnEncodedResult,
     });
     console.log(response);
